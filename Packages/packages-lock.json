@@ -1,5 +1,17 @@
 {
   "dependencies": {
+    "com.fsp.screenshot": {
+      "version": "file:../LocalPackages/com.fsp.screenshot",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "com.fsp.utility": {
+      "version": "file:../LocalPackages/com.fsp.utility",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "1.15.4",
       "depth": 0,

@@ -1,0 +1,10 @@
+{
+  "name": "com.fsp.empty",
+  "displayName": "Empty",
+  "version": "0.0.1",
+  "description": "空壳模板",
+  "keywords": [
+    "empty"
+  ],
+  "dependencies": {}
+}

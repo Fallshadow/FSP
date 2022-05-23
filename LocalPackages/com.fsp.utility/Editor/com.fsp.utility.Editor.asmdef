@@ -1,0 +1,18 @@
+{
+    "name": "com.fsp.utility.Editor",
+    "rootNamespace": "",
+    "references": [
+        "com.fsp.utility"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,10 @@
+{
+  "name": "com.fsp.utility",
+  "displayName": "FspUtility",
+  "version": "0.0.1",
+  "description": "通用方法",
+  "keywords": [
+    "utility"
+  ],
+  "dependencies": {}
+}

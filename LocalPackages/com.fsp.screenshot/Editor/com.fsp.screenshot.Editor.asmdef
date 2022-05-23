@@ -1,0 +1,19 @@
+{
+    "name": "com.fsp.screenshot.Editor",
+    "rootNamespace": "",
+    "references": [
+        "com.fsp.screenshot",
+        "com.fsp.utility.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

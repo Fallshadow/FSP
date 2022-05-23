@@ -1,0 +1,12 @@
+{
+  "name": "com.fsp.screenshot",
+  "displayName": "ModelShot",
+  "version": "0.0.1",
+  "description": "Free screen shot game models. Include operate texture.",
+  "keywords": [
+    "model",
+	"screen shot",
+	"texture"
+  ],
+  "dependencies": {}
+}
