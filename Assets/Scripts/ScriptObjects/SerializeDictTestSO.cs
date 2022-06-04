@@ -4,8 +4,6 @@ using UnityEngine;
 
 namespace act.data
 {
-    
-
     [Serializable]
     [CreateAssetMenu]
     public class SerializeDictTestSO : ScriptableObject, ISerializationCallbackReceiver
@@ -13,10 +11,11 @@ namespace act.data
         Dictionary<int,int> MainLayerFsmControDic = new Dictionary<int,int>();
         [SerializeField] [HideInInspector] private List<int> keys0 = new List<int>();
         [SerializeField] [HideInInspector] private List<int> values0 = new List<int>();
-
-
+        
         public void OnBeforeSerialize()
         {
+            // 需要注意的是字典序列化的官方实例写法不完全正确
+            // 如果在打AB的时候 unity回去如何执行？ 需要注意
             keys0.Clear();
             values0.Clear();
 

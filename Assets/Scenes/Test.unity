@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 101564182}
   - component: {fileID: 101564181}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TestAll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c80bfb963b7030449e6bd325b0d8a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestStringToHash1: 0
+  TestStringToHash2: 0
+  TestStringToHash3: 0
   StringToHashTime: 1
   StringToHashCount: 50000
 --- !u!4 &101564182

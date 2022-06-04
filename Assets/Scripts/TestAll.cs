@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -15,18 +14,22 @@ public class TestAll : MonoBehaviour
     {
         #region 结论：10W条Animator.StringToHash 要26ms 是很慢的 是不可以在update调用的
 
-        // RunStringToHash();
-        // RunStringToHash2();
+        RunStringToHash();
+        RunStringToHash2();
         RunStringToHash3();
 
         #endregion
         
         
     }
-
     
     #region 测试stringToHash
 
+    public bool TestStringToHash1 = false;
+    public bool TestStringToHash2 = false;
+    public bool TestStringToHash3 = false;
+    
+    
     private string[] stringToHashArray = new string[]
     {
         "霸体",
@@ -63,10 +66,8 @@ public class TestAll : MonoBehaviour
         Animator.StringToHash("幻影旋灭"),
     };
     
-    [Header("每隔多久进行一次字符检测切换")]
     public int StringToHashTime = 10;
     private float stringToHashTimer = 0;
-    [Header("同时进行字符检测的个数")]
     public int StringToHashCount = 1;
     private string stringToHashTestString = "对比的字符串";
     private int stringToHashTestString2 = Animator.StringToHash("对比的字符串");
@@ -76,6 +77,7 @@ public class TestAll : MonoBehaviour
     private List<int> stringToHashList = new List<int>();
     private void RunStringToHash()
     {
+        if (!TestStringToHash1) return;
         if (stringToHashTimer == 0)
         {
             stringToHashList.Clear();
@@ -100,6 +102,8 @@ public class TestAll : MonoBehaviour
     
     private void RunStringToHash2()
     {
+        if (!TestStringToHash2) return;
+
         if (stringToHashTimer == 0)
         {
             stringToHashList.Clear();
@@ -124,6 +128,8 @@ public class TestAll : MonoBehaviour
     
     private void RunStringToHash3()
     {
+        if (!TestStringToHash3) return;
+
         if (stringToHashTimer == 0)
         {
             stringToHashList.Clear();
