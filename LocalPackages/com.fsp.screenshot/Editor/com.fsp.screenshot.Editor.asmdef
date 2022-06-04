@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "com.fsp.screenshot",
-        "com.fsp.utility.Editor"
+        "com.fsp.utility.Editor",
+        "com.fsp.utility"
     ],
     "includePlatforms": [
         "Editor"

@@ -8,7 +8,7 @@ namespace act.data
 
     [Serializable]
     [CreateAssetMenu]
-    public class LogicFsmControlSO : ScriptableObject, ISerializationCallbackReceiver
+    public class SerializeDictTestSO : ScriptableObject, ISerializationCallbackReceiver
     {
         Dictionary<int,int> MainLayerFsmControDic = new Dictionary<int,int>();
         [SerializeField] [HideInInspector] private List<int> keys0 = new List<int>();
