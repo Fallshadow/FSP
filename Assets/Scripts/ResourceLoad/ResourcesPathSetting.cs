@@ -1,7 +1,7 @@
-﻿namespace ResourceLoad
+﻿namespace fsp.resourceload
 {
-    public class ResourcesPathSetting
+    public static class ResourcesPathSetting
     {
-        
+
     }
 }

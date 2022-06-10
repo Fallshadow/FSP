@@ -1,3 +1,5 @@
+
+// 这边是对unity的方法扩展
 public static class UnityApiExtend 
 {
     #region String

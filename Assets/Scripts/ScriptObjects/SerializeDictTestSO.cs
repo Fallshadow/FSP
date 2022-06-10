@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace act.data
+namespace fsp.data
 {
     [Serializable]
     [CreateAssetMenu]

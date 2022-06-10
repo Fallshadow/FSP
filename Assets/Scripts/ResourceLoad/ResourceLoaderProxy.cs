@@ -1,19 +1,23 @@
 using UnityEditor;
 using UnityEngine;
 
-public class ResourceLoaderProxy : Singleton<ResourceLoaderProxy>
+namespace fsp.resourceload
 {
-    public T LoadAsset<T>(string assetPath) where T : Object
+    public class ResourceLoaderProxy : Singleton<ResourceLoaderProxy>
     {
-#if UNITY_EDITOR
-        if (!Application.isPlaying)
+        public T LoadAsset<T>(string assetPath) where T : Object
         {
-            return AssetDatabase.LoadAssetAtPath<T>(assetPath);
-        }
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return AssetDatabase.LoadAssetAtPath<T>(assetPath);
+            }
 #endif
-        // TODO：加载资源打包出来
-        // int hash = ResourceUtility.GetHashCodeByAssetPath(assetPath);
-        // return manager.LoadAsset<T>(hash);
-        return null;
+            // TODO：加载资源打包出来
+            // int hash = ResourceUtility.GetHashCodeByAssetPath(assetPath);
+            // return manager.LoadAsset<T>(hash);
+            return null;
+        }
     }
 }
+

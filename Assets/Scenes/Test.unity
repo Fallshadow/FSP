@@ -157,6 +157,16 @@ MonoBehaviour:
   TestStringToHash3: 0
   StringToHashTime: 1
   StringToHashCount: 50000
+  Test2StrColor0: 0
+  Test2Str0: "Update\u91CCstr"
+  Test2Str1: "\u6D4B\u8BD5\u6570\u636E"
+  Test2Color0: {r: 1, g: 1, b: 1, a: 1}
+  RunTest3EnumLong0: 0
+  Test3MyEnumLong0: 2147483648
+  Test3MyEnumLong1: 9223372036854775808
+  RunTest4Assert0: 0
+  RunTest4Assert1: 0
+  RunTest4Assert2: 0
 --- !u!4 &101564182
 Transform:
   m_ObjectHideFlags: 0
@@ -404,6 +414,10 @@ PrefabInstance:
     - target: {fileID: 2350652681907635850, guid: 83628a2e699576147adabb30587f44d4, type: 3}
       propertyPath: m_Name
       value: PicoChan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350652681907635850, guid: 83628a2e699576147adabb30587f44d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83628a2e699576147adabb30587f44d4, type: 3}
