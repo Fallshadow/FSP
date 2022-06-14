@@ -49,6 +49,12 @@ namespace fsp.testall
             RunTest4AssertFunc2();
 
             #endregion
+
+            #region 测试5：String.Join 和 String.Split 配合可以去除空？   结论：主要是这个接口：XXXXX.Split(XXXXX, StringSplitOptions.RemoveEmptyEntries)
+
+            RunTest5Func0();
+
+            #endregion
         }
 
         #region 测试stringToHash
@@ -244,6 +250,23 @@ namespace fsp.testall
         {
             if (!RunTest4Assert2) return;
             Debug.Log(1);
+        }
+        
+        #endregion
+
+        #region 测试5：String.Join 和 String.Split 配合可以去除空？
+
+        public bool RunTest5String0 = false;
+        public string Test5String = "A;;B;;C;D;E";
+        public string Test5ResultString = "";
+        public char[] Test5StringSplit = new char[1] {';'};
+
+        public void RunTest5Func0()
+        {
+            if (!RunTest5String0) return;
+            Test5ResultString = string.Join(";", Test5String.Split(Test5StringSplit, StringSplitOptions.RemoveEmptyEntries));
+            Debug.Log(Test5ResultString);
+            RunTest5String0 = false;
         }
         
         #endregion

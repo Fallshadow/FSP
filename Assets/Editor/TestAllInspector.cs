@@ -10,6 +10,7 @@ public class TestAllInspector : Editor
     private static bool showTest2StrColor = false;
     private static bool showTest3EnumLong = false;
     private static bool showTest4Assert = false;
+    private static bool showTest5StringSplit = false;
     
     private void OnEnable()
     {
@@ -55,6 +56,15 @@ public class TestAllInspector : Editor
             parent.RunTest4Assert0 = EditorGUILayout.Toggle("Assert", parent.RunTest4Assert0);
             parent.RunTest4Assert1 = EditorGUILayout.Toggle("BOOL Log", parent.RunTest4Assert1);
             parent.RunTest4Assert2 = EditorGUILayout.Toggle("Log", parent.RunTest4Assert2);
+        }
+        EditorGUILayout.EndFoldoutHeaderGroup();
+        
+        showTest5StringSplit = EditorGUILayout.BeginFoldoutHeaderGroup(showTest5StringSplit, "测试String Split");
+        if (showTest5StringSplit)
+        {
+            parent.RunTest5String0 = EditorGUILayout.Toggle("Test5StringSplit", parent.RunTest5String0);
+            parent.Test5String = EditorGUILayout.TextField("输入;间隔字符串", parent.Test5String);
+            EditorGUILayout.TextField("字符串结果", parent.Test5ResultString);
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
     }
