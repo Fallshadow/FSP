@@ -58,6 +58,9 @@ public class TestAllInspector : Editor
             case TestItemType.TIT_Str_Split:
                 result = "测试String Split";
                 break;
+            case TestItemType.TIT_AnimationCurveAdditive:
+                result = "测试 AnimationCurve Additive";
+                break;
             default:
                 break;
         }
@@ -109,6 +112,14 @@ public class TestAllInspector : Editor
                 testStringSplit.TestBool0 = EditorGUILayout.Toggle("Test5StringSplit", testStringSplit.TestBool0);
                 testStringSplit.Test5String = EditorGUILayout.TextField("输入;间隔字符串", testStringSplit.Test5String);
                 EditorGUILayout.TextField("字符串结果", testStringSplit.Test5ResultString);
+                break;
+            case TestItemType.TIT_AnimationCurveAdditive:
+                TestAnimationCurvetAdditive testAnimationCurvetAdditive = itemBase as TestAnimationCurvetAdditive;
+                if (testAnimationCurvetAdditive == null) return;
+                testAnimationCurvetAdditive.TestBool0 = EditorGUILayout.Toggle("Copy And Add Once", testAnimationCurvetAdditive.TestBool0);
+                testAnimationCurvetAdditive.additiveValue = EditorGUILayout.FloatField("Additive Value", testAnimationCurvetAdditive.additiveValue);
+                testAnimationCurvetAdditive.sourceAC = EditorGUILayout.CurveField("Source Curve", testAnimationCurvetAdditive.sourceAC);
+                EditorGUILayout.CurveField("Result Curve", testAnimationCurvetAdditive.targetAC);
                 break;
             default:
                 break;

@@ -17,6 +17,10 @@ namespace fsp.testall
             _types.Add(TestItemType.TIT_Enum_Long, typeof(TestEnumLong));
             _types.Add(TestItemType.TIT_Assert_GC, typeof(TestAssertGC));
             _types.Add(TestItemType.TIT_Str_Split, typeof(TestStringSplit));
+            
+            
+            
+            _types.Add(TestItemType.TIT_AnimationCurveAdditive, typeof(TestAnimationCurvetAdditive));
         }
         
         public static T GetTestItem<T>(TestItemType testItemType) where T : TestItemBase
