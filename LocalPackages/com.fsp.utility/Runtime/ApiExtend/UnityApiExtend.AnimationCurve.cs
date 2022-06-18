@@ -1,20 +1,16 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-// 这边是对unity的方法扩展
-public static class UnityApiExtend 
+public static partial class UnityApiExtend
 {
-    #region String
-
-    public static bool IsNullOrEmptyEx(this string str)
+    public static AnimationCurve GetDeepCloneCurve(this AnimationCurve refCurve)
     {
-        return string.IsNullOrEmpty(str);
+        AnimationCurve result = new AnimationCurve
+        {
+            keys = refCurve.keys, postWrapMode = refCurve.postWrapMode, preWrapMode = refCurve.preWrapMode
+        };
+        return result;
     }
-
-    #endregion
-
-
-    #region AnimationCurve
-
+    
     // 将sourceAC的设置全全复制给targetAC 唯一不同在于targetAC会比sourceAC整体浮动addtiveValue（除了最后一个点 / 全部）
     public static AnimationCurve AddtiveAnimationCurve(this AnimationCurve sourceAC, float addtiveValue, bool includeLast = true)
     {
@@ -27,7 +23,7 @@ public static class UnityApiExtend
             {
                 keyvalue += addtiveValue;
             }
-            else if(includeLast)
+            else if (includeLast)
             {
                 keyvalue += addtiveValue;
             }
@@ -35,12 +31,11 @@ public static class UnityApiExtend
             targetAC.AddKey(new Keyframe(
                 sourceAC[i].time, keyvalue,
                 sourceAC[i].inTangent, sourceAC[i].outTangent,
-                sourceAC[i].inWeight,  sourceAC[i].outWeight));
+                sourceAC[i].inWeight, sourceAC[i].outWeight));
         }
+
         targetAC.postWrapMode = sourceAC.postWrapMode;
-        targetAC.preWrapMode  = sourceAC.preWrapMode;
+        targetAC.preWrapMode = sourceAC.preWrapMode;
         return targetAC;
     }
-
-    #endregion
 }

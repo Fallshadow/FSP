@@ -8,7 +8,7 @@ namespace fsp.debug
         [Flags]
         public enum PrintBy : int
         {
-            SunShuchao = 1 << 1,
+            SunShuChao = 1 << 1,
             unknown = 1 << 31,
         }
      

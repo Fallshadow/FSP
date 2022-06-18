@@ -8,9 +8,6 @@ using fsp.testall.TestItems;
 public class TestAllInspector : Editor
 {
     private TestAll parent;
-    private static bool showTest3EnumLong = false;
-    private static bool showTest4Assert = false;
-    private static bool showTest5StringSplit = false;
 
     private List<bool> storeBools = new List<bool>();
     

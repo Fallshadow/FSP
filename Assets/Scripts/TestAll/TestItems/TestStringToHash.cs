@@ -52,9 +52,6 @@ namespace fsp.testall.TestItems
         public int StringToHashCount = 100;
         private string stringToHashTestString = "对比的字符串";
         private int stringToHashTestString2 = Animator.StringToHash("对比的字符串");
-
-        private int stringToHashLength = 0;
-        private int stringToHashCurIndex = 0;
         private List<int> stringToHashList = new List<int>();
 
         public override void TestFunc0()
