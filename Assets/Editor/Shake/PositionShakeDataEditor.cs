@@ -42,10 +42,11 @@ namespace fsp.shake
         {
             var curRect = GUILayoutUtility.GetRect(EditorStyles.popup.fixedWidth, EditorStyles.popup.fixedHeight);
             PopupWindowUtility.Show(curRect, "Config选择:", positionShakeNameList, curSelectPositionShakeIndex, i => { curSelectPositionShakeIndex = i; }, true);
+            
             OnInspectorGUICreate();
+            OnInspectorGUIBaseConfig();
             
             curConfigItem = configSO.ShakeConfigDatas[curSelectPositionShakeIndex];
-
         }
     }
 }

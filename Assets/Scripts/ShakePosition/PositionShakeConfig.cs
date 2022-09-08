@@ -8,8 +8,13 @@ namespace fsp.shake
     [Serializable]
     public class PositionShakeConfig : ICloneable
     {
-        public PositionShakeType positionShakeType = PositionShakeType.NONE;
+        public PositionShakeType PSType = PositionShakeType.NONE;
         public string ShakeConfigName;
+
+        public bool ApplyRandomShake = false;
+        public float DelayShakeTime = 0f;
+        public float TotalShakeTime = 0f;
+        
         public AnimationCurve FrequencyXCurve;
         public AnimationCurve FrequencyYCurve;
         public AnimationCurve FrequencyZCurve;
@@ -22,13 +27,23 @@ namespace fsp.shake
             // 先用浅拷贝创建新克隆
             PositionShakeConfig newClone = (PositionShakeConfig)MemberwiseClone();
             // 然后依次对新克隆创建深拷贝字段
-            newClone.FrequencyXCurve = newClone.FrequencyXCurve.GetDeepCloneCurve();
-            newClone.FrequencyYCurve = newClone.FrequencyYCurve.GetDeepCloneCurve();
-            newClone.FrequencyZCurve = newClone.FrequencyZCurve.GetDeepCloneCurve();
-            newClone.AmplitudeXCurve = newClone.AmplitudeXCurve.GetDeepCloneCurve();
-            newClone.AmplitudeYCurve = newClone.AmplitudeYCurve.GetDeepCloneCurve();
-            newClone.AmplitudeZCurve = newClone.AmplitudeZCurve.GetDeepCloneCurve();
+            newClone.FrequencyXCurve = this.FrequencyXCurve.GetDeepCloneCurve();
+            newClone.FrequencyYCurve = this.FrequencyYCurve.GetDeepCloneCurve();
+            newClone.FrequencyZCurve = this.FrequencyZCurve.GetDeepCloneCurve();
+            newClone.AmplitudeXCurve = this.AmplitudeXCurve.GetDeepCloneCurve();
+            newClone.AmplitudeYCurve = this.AmplitudeYCurve.GetDeepCloneCurve();
+            newClone.AmplitudeZCurve = this.AmplitudeZCurve.GetDeepCloneCurve();
             return newClone;
+        }
+
+        public void ChangeCurveTotalTimeScale(float newTotalTime, float prevTotalTime)
+        {
+            FrequencyXCurve = FrequencyXCurve.ChangeCurveTotalTimeScale(newTotalTime, prevTotalTime);
+            FrequencyYCurve = FrequencyYCurve.ChangeCurveTotalTimeScale(newTotalTime, prevTotalTime);
+            FrequencyZCurve = FrequencyZCurve.ChangeCurveTotalTimeScale(newTotalTime, prevTotalTime);
+            AmplitudeXCurve = AmplitudeXCurve.ChangeCurveTotalTimeScale(newTotalTime, prevTotalTime);
+            AmplitudeYCurve = AmplitudeYCurve.ChangeCurveTotalTimeScale(newTotalTime, prevTotalTime);
+            AmplitudeZCurve = AmplitudeZCurve.ChangeCurveTotalTimeScale(newTotalTime, prevTotalTime);
         }
     }
 }

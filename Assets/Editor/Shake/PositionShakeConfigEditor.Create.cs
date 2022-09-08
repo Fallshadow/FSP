@@ -44,7 +44,7 @@ namespace fsp.shake
                 Undo.RecordObject(configSO, "Add Shake Config");
                 PositionShakeConfig newConfigData = new PositionShakeConfig();
                 newConfigData.ShakeConfigName = checkCreateDataName(tempCreateShakeName);
-                newConfigData.positionShakeType = tempCreateShakeType;
+                newConfigData.PSType = tempCreateShakeType;
                 configSO.ShakeConfigDatas.Add(newConfigData);
                 curSelectPositionShakeIndex = configSO.ShakeConfigDatas.Count - 1;
                 reloadPositionShakeListData();
