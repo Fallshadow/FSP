@@ -6,6 +6,12 @@
       "source": "local",
       "dependencies": {}
     },
+    "com.fsp.uimanager": {
+      "version": "file:../LocalPackages/com.fsp.uimanager",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.fsp.utility": {
       "version": "file:../LocalPackages/com.fsp.utility",
       "depth": 0,

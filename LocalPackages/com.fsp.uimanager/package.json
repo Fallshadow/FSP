@@ -1,0 +1,10 @@
+{
+  "name": "com.fsp.uimanager",
+  "displayName": "UiManager",
+  "version": "0.0.1",
+  "description": "UI管理解决方案",
+  "keywords": [
+    "UiManager"
+  ],
+  "dependencies": {}
+}
