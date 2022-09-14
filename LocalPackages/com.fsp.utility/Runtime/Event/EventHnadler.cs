@@ -296,7 +296,7 @@ namespace fsp.evt
             debug.PrintSystem.LogError($"[EventHandler] Cannot register different types of callback functions in the same Event ID, need: {delMethodInfo}, pass: {actionMethodInfo}");
         }
 
-        [System.Diagnostics.Conditional("IGG_DEBUG")]
+        [System.Diagnostics.Conditional("PRINT_SYSTEM_DEBUG")]
         private static void checkDupAction(Action callbacks, Action action)
         {
             Delegate[] list = callbacks.GetInvocationList();
@@ -307,7 +307,7 @@ namespace fsp.evt
             }
         }
         
-        [System.Diagnostics.Conditional("IGG_DEBUG")]
+        [System.Diagnostics.Conditional("PRINT_SYSTEM_DEBUG")]
         private static void checkDupAction<T>(Action<T> callbacks, Action<T> action)
         {
             Delegate[] list = callbacks.GetInvocationList();
@@ -318,7 +318,7 @@ namespace fsp.evt
             }
         }
         
-        [System.Diagnostics.Conditional("IGG_DEBUG")]
+        [System.Diagnostics.Conditional("PRINT_SYSTEM_DEBUG")]
         private static void checkDupAction<T1, T2>(Action<T1, T2> callbacks, Action<T1, T2> action)
         {
             Delegate[] list = callbacks.GetInvocationList();
@@ -329,7 +329,7 @@ namespace fsp.evt
             }
         }
         
-        [System.Diagnostics.Conditional("IGG_DEBUG")]
+        [System.Diagnostics.Conditional("PRINT_SYSTEM_DEBUG")]
         private static void checkDupAction<T1, T2, T3>(Action<T1, T2, T3> callbacks, Action<T1, T2, T3> action)
         {
             Delegate[] list = callbacks.GetInvocationList();
@@ -340,7 +340,7 @@ namespace fsp.evt
             }
         }
         
-        [System.Diagnostics.Conditional("IGG_DEBUG")]
+        [System.Diagnostics.Conditional("PRINT_SYSTEM_DEBUG")]
         private static void checkDupAction<T1, T2, T3, T4>(Action<T1, T2, T3, T4> callbacks, Action<T1, T2, T3, T4> action)
         {
             Delegate[] list = callbacks.GetInvocationList();
@@ -351,7 +351,7 @@ namespace fsp.evt
             }
         }
         
-        [System.Diagnostics.Conditional("IGG_DEBUG")]
+        [System.Diagnostics.Conditional("PRINT_SYSTEM_DEBUG")]
         private static void checkDupAction<T1, T2, T3, T4, T5>(Action<T1, T2, T3, T4, T5> callbacks, Action<T1, T2, T3, T4, T5> action)
         {
             Delegate[] list = callbacks.GetInvocationList();

@@ -56,7 +56,7 @@ namespace fsp.debug
             Debuger.LogWarning($"{title} {str}");
         }
 
-        [System.Diagnostics.Conditional("IGG_DEBUG")]
+        [System.Diagnostics.Conditional("PRINT_SYSTEM_DEBUG")]
         public static void LogWarning(string str, Color color, PrintBy pb = PrintBy.unknown)
         {
             if (isSelectedPrinter(pb))
