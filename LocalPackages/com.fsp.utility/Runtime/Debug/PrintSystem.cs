@@ -34,7 +34,8 @@ namespace fsp.debug
             if (!isSelectedPrinter(pb)) return;
 
             string title = printerTitle(pb);
-            Debuger.Log($"{title} {str}");
+            // Debuger.Log($"{title} {str}");
+            Debug.Log($"{title} {str}");
         }
 
         [System.Diagnostics.Conditional("PRINT_SYSTEM_DEBUG")]
