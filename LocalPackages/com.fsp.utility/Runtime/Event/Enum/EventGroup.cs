@@ -4,5 +4,6 @@
     {
         NONE = 0,
         CAMERA = 1,
+        KEYWORD = 2,
     }
 }

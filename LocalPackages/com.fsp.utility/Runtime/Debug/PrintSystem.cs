@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace fsp.debug
 {
-    public class PrintSystem
+    public static class PrintSystem
     {
         [Flags]
         public enum PrintBy : int
@@ -23,7 +23,7 @@ namespace fsp.debug
         private static PrintBy outPutLogger = 0;
 
         // 外部设置logger
-        public void SetOutPutLogger(PrintBy logger)
+        public static void SetOutPutLogger(PrintBy logger)
         {
             outPutLogger = logger;
         }
