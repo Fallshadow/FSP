@@ -1,3 +1,16 @@
 {
-	"name": "com.fsp.screenshot"
+    "name": "com.fsp.screenshot",
+    "rootNamespace": "",
+    "references": [
+        "GUID:fff830ad7b808e64c8dfae6d3cba77ef"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

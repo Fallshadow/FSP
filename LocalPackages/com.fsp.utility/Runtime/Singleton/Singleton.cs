@@ -13,6 +13,7 @@ public class Singleton<T> where T : Singleton<T>
             {
                 // ToStudy:
                 // 使用与指定参数最匹配的构造函数创建指定类型的实例。
+                // 这个是通过反射创建实例，是一个全新的实例，所以mono那边不可以用，mono要用unity创建好的
                 s_instance = Activator.CreateInstance<T>();
                 s_instance.init();
             }

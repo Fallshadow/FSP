@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace modelshot.editor
+namespace fsp.modelshot.editor
 {
     public class TextureImportChangerWindow : EditorWindow
     {

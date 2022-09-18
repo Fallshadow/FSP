@@ -10,7 +10,7 @@ public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T : Singlet
     {
         if (s_instance == null)
         {
-            s_instance = Activator.CreateInstance<T>();
+            s_instance = this as T;
             s_instance.init();
         }
         else
