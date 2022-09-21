@@ -14,7 +14,7 @@ namespace fsp.assetbundlecore
         {
             return manager.LoadAsset<T>(hashCode);
         }
-        
+
         public void InitRunTimeLoadManager()
         {
             if (IsInited)

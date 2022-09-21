@@ -1,3 +1,7 @@
-﻿public partial class EUtility
+﻿namespace fsp.eutility
 {
+    public partial class EUtility
+    {
+    
+    }
 }

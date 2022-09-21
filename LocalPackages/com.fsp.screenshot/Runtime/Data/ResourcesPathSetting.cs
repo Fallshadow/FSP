@@ -9,5 +9,7 @@
         // File Path
         public const string ASSETHASHMAP_UI_FILE_PATH = "LocalPackages/com.fsp.screenshot/RuntimeResources/ScriptableObject/ModelShot/AssetHashMap_UI_ModelShot.asset";
         public const string ASSETHASHMAP_UI_VIRTUAL_FILE_PATH = "Packages/com.fsp.screenshot/RuntimeResources/ScriptableObject/ModelShot/AssetHashMap_UI_ModelShot.asset";
+        public const string CREATEOBJECTPATHSO_VIRTUAL_FILE_PATH = "Packages/com.fsp.screenshot/RuntimeResources/ScriptableObject/ModelShot/CreateObjectPathSO.asset";
+        
     }
 }

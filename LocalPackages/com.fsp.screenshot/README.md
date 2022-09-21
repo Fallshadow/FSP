@@ -1,4 +1,30 @@
-# ModelScreenShot
+## ModelShot
 
-## What is ModelScreenShot?
+#### 简介
+
+为了解决模型截图需求而诞生的工具，可以自由选择文件夹导入**FBX和Anim**进行截图
+- 自定义环境创建并支持记录。*未来可以加入背景板环境系统到环境里。*
+    - 可以将需要的环境数据储存为方案。目前仅仅使用一个传统摄影棚方案，主光、暖光、冷光。
+- 模型空间信息自定义
+    - 支持Pos Scale Rotate记录
+    - 支持tran层级信息记录和应用
+- 支持对特定方案进行特定处理
+    - 比如想以特定角度截取双刀，但双刀有两把分开的刀，这种的模型两个命名有规范，例如XXX_L,XXX_R。
+      所以可以使用替换字符的做法，选择截图双刀，即从配置的饲灵枪文件夹里读取对应文件，
+      并且默认给予trans等信息
+
+- 支持镜头方案预设
+
+
+#### 程序结构
+
+- ModelShotManager
+    
+
+- LittleSceneEnvironmentCreator ： 小场景环境创建者，创建我们在场景里自建的符合某套规则的Environment
+    - LittleSceneEnvironmentStrategy : 小场景环境策略，比如摄影棚，锅炉房
+    - LittleSceneSo : 小场景配置文件
+    
+
+- ObjectStylingDesigner : 以某种规则创造某些物体，并以某种规则排布这些物体，即为物件造型师
 
