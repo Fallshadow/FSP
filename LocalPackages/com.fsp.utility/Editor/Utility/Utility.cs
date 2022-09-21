@@ -1,7 +1,12 @@
-﻿namespace fsp.eutility
+﻿using UnityEditor;
+using UnityEngine;
+
+namespace fsp.eutility
 {
-    public partial class EUtility
+    public static partial class EUtility
     {
-    
+        public static readonly FSPEditorStyle Style = new FSPEditorStyle();
     }
+    
+
 }

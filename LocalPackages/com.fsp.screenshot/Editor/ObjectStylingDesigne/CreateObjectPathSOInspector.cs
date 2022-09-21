@@ -25,26 +25,33 @@ namespace fsp.modelshot.editor.ObjectStylingDesigne
                 EditorUtility.SetDirty(config);
                 AssetDatabase.SaveAssets();
             }
-            EUtility.ListTEditorShowNewT(config.ObjectPathStructs, "方案列表",ref objectPathStructsFoldOut, () =>
-            {
-                foreach (var item in config.ObjectPathStructs)
-                {
-                    using (new GUIHorizontalGroup(true))
-                    {
-                        item.CreatePlanName = EditorGUILayout.TextField(item.CreatePlanName);
-                        item.ResourceFolderAssetsPath = EditorGUILayout.TextField(item.ResourceFolderAssetsPath);
-                    }
 
-                    EUtility.ListTEditorShowDefaultT(item.FileSuffixStrings, "后缀列表", ref stringFoldOut, () =>
+            using (new GUILabelWidth(70))
+            {
+                EUtility.ListTEditorShowNewT(config.ObjectPathStructs, "方案列表",ref objectPathStructsFoldOut, () =>
+                {
+                    foreach (var item in config.ObjectPathStructs)
                     {
-                        for (int index = 0; index < item.FileSuffixStrings.Count; index++)
+                        using (new GUISubFeild(0))
                         {
-                            item.FileSuffixStrings[index] ??= "";
-                            item.FileSuffixStrings[index] = EditorGUILayout.TextField(item.FileSuffixStrings[index]);
+                            item.CreatePlanName = EditorGUILayout.TextField("方案名称" ,item.CreatePlanName);
+                            item.ResourceFolderAssetsPath = EditorGUILayout.TextField("方案文件夹" ,item.ResourceFolderAssetsPath);
+
+                            EUtility.ListTEditorShowDefaultT(item.FileSuffixStrings, "后缀列表", ref stringFoldOut, () =>
+                            {
+                                using (new GUISubFeild(1))
+                                {
+                                    for (int index = 0; index < item.FileSuffixStrings.Count; index++)
+                                    {
+                                        item.FileSuffixStrings[index] ??= "";
+                                        item.FileSuffixStrings[index] = EditorGUILayout.TextField(item.FileSuffixStrings[index]);
+                                    }
+                                }
+                            }, 1);
                         }
-                    });
-                }
-            });
+                    }
+                }, 0);
+            }
         }
     }
 }
