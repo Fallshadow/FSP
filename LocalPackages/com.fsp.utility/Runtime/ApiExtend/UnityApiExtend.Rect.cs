@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-public static partial class UnityApiExtend
+namespace fsp
 {
-    public static Rect ChangeValue(this Rect curRect, float newRectX, float newRectY)
+    public static partial class UnityApiExtend
     {
-        Rect newRect = curRect;
-        newRect.x = newRectX;
-        newRect.y = newRectY;
-        return newRect;
+        public static Rect ChangeValue(this Rect curRect, float newRectX, float newRectY)
+        {
+            Rect newRect = curRect;
+            newRect.x = newRectX;
+            newRect.y = newRectY;
+            return newRect;
+        }
     }
 }

@@ -1,7 +1,10 @@
-﻿public static partial class UnityApiExtend
+﻿namespace fsp
 {
-    public static bool IsNullOrEmptyEx(this string str)
+    public static partial class UnityApiExtend
     {
-        return string.IsNullOrEmpty(str);
+        public static bool IsNullOrEmptyEx(this string str)
+        {
+            return string.IsNullOrEmpty(str);
+        }
     }
 }

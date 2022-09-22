@@ -1,31 +1,36 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T : SingletonMonoBehavior<T>
+namespace fsp
 {
-    public static T instance => s_instance;
-    private static T s_instance = null;
-
-    protected virtual void Awake()
+    public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T : SingletonMonoBehavior<T>
     {
-        if (s_instance == null)
+        public static T instance => s_instance;
+        private static T s_instance = null;
+
+        protected virtual void Awake()
         {
-            s_instance = this as T;
-            s_instance.init();
-        }
-        else
-        {
-            if (Application.isPlaying)
+            if (s_instance == null)
             {
-                Destroy(this);
+                s_instance = this as T;
+                s_instance.init();
+            }
+            else
+            {
+                if (Application.isPlaying)
+                {
+                    Destroy(this);
+                }
             }
         }
-    }
 
-    protected virtual void OnDestroy()
-    {
-        s_instance = null;
-    }
+        protected virtual void OnDestroy()
+        {
+            s_instance = null;
+        }
 
-    protected virtual void init() { } 
+        protected virtual void init()
+        {
+        }
+    }
 }

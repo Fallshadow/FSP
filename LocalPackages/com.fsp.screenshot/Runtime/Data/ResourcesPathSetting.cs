@@ -7,7 +7,6 @@
         public const string UI_PREFABS_FOLDER = "/Prefabs";
         
         // File Path
-        public const string ASSETHASHMAP_UI_FILE_PATH = "LocalPackages/com.fsp.screenshot/Resources/ScriptableObject/ModelShot/AssetHashMap_UI_ModelShot.asset";
         public const string ASSETHASHMAP_UI_VIRTUAL_FILE_PATH = "Packages/com.fsp.screenshot/Resources/ScriptableObject/ModelShot/AssetHashMap_UI_ModelShot.asset";
         public const string CREATEOBJECTPATHSO_VIRTUAL_FILE_PATH = "Packages/com.fsp.screenshot/Resources/ScriptableObject/ModelShot/CreateObjectPathSO.asset";
         

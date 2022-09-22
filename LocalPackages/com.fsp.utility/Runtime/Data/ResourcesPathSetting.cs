@@ -8,6 +8,8 @@
         public const string RESOURCES_IOS_FOLDER = "ResourceRex_IOS/";
         
         public const string ABDepInfo_DT_Application_Path_Suffix = "/../ABDepInfo_DT/";
+        // file path
+        public const string ASSETHASHMAP_UI_FILE_PATH = ""; // 日后填写UI Hash SO的文件路径
         
 #if UNITY_EDITOR
         public const string ABDepInfo_DT_Package_Application_Path_Suffix = "/../ABDepInfo_DT_Package/";

@@ -1,23 +1,28 @@
 ﻿using UnityEngine;
 
-public abstract class SingletonMonoBehaviorNoDestroy<T> : MonoBehaviour where T : SingletonMonoBehaviorNoDestroy<T>
+namespace fsp
 {
-    public static T instance => s_instance;
-    private static T s_instance = null;
-
-    protected virtual void Awake()
+    public abstract class SingletonMonoBehaviorNoDestroy<T> : MonoBehaviour where T : SingletonMonoBehaviorNoDestroy<T>
     {
-        if (s_instance == null)
+        public static T instance => s_instance;
+        private static T s_instance = null;
+
+        protected virtual void Awake()
         {
-            DontDestroyOnLoad(gameObject);
-            s_instance = this as T;
-            init();
+            if (s_instance == null)
+            {
+                DontDestroyOnLoad(gameObject);
+                s_instance = this as T;
+                init();
+            }
+            else
+            {
+                Destroy(this);
+            }
         }
-        else
+
+        protected virtual void init()
         {
-            Destroy(this);
         }
     }
-
-    protected virtual void init() { }
 }

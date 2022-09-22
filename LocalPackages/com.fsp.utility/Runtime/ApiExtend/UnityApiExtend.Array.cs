@@ -1,7 +1,10 @@
-﻿public static partial class UnityApiExtend
+﻿namespace fsp
 {
-    public static bool IsNullOrEmpty<T>(this T[] array)
+    public static partial class UnityApiExtend
     {
-        return array == null || array.Length == 0;
+        public static bool IsNullOrEmpty<T>(this T[] array)
+        {
+            return array == null || array.Length == 0;
+        }
     }
 }

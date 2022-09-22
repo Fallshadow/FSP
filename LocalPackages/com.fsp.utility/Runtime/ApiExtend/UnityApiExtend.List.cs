@@ -1,40 +1,43 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public static partial class UnityApiExtend
+namespace fsp
 {
-    public static bool IsNullOrEmpty<T>(this List<T> list)
+    public static partial class UnityApiExtend
     {
-        return list == null || list.Count == 0;
-    }
-    
-    public static void AdjustToConformCountNewT<T>(this List<T> list, int fullCount) where T : new ()
-    {
-        if (list.Count == fullCount) return;
-    
-        while (list.Count < fullCount)
+        public static bool IsNullOrEmpty<T>(this List<T> list)
         {
-            list.Add(new T());
+            return list == null || list.Count == 0;
         }
-        
-        while (list.Count > fullCount)
-        {
-            list.RemoveAt(list.Count - 1);
-        }
-    }
-    
-    public static void AdjustToConformCountDefaultT<T>(this List<T> list, int fullCount)
-    {
-        if (list.Count == fullCount) return;
 
-        while (list.Count < fullCount)
+        public static void AdjustToConformCountNewT<T>(this List<T> list, int fullCount) where T : new()
         {
-            list.Add(default);
+            if (list.Count == fullCount) return;
+
+            while (list.Count < fullCount)
+            {
+                list.Add(new T());
+            }
+
+            while (list.Count > fullCount)
+            {
+                list.RemoveAt(list.Count - 1);
+            }
         }
-        
-        while (list.Count > fullCount)
+
+        public static void AdjustToConformCountDefaultT<T>(this List<T> list, int fullCount)
         {
-            list.RemoveAt(list.Count - 1);
+            if (list.Count == fullCount) return;
+
+            while (list.Count < fullCount)
+            {
+                list.Add(default);
+            }
+
+            while (list.Count > fullCount)
+            {
+                list.RemoveAt(list.Count - 1);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using fsp.assetbundlecore;
 using fsp.debug;
+using fsp.utility;
 
 namespace fsp.ui
 {
@@ -46,7 +47,7 @@ namespace fsp.ui
 
         protected virtual void loadAssetHashMap_UI()
         {
-            int assetMapId = AssetHashDefine.UISO_ASSET_HASH_MAP;
+            int assetMapId = Utility.GetHashCodeByAssetPath(data.ResourcesPathSetting.EDITOR_TIMELINE_LEFT_SHADOW);
             uiSO = ResourceLoaderProxy.instance.LoadAsset<AssetHashMap_UI>(assetMapId);
         }
     }
