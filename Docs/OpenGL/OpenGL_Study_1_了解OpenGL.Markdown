@@ -1,4 +1,4 @@
-## OpenGL
+## 了解OpenGL
 
 笔记抄录教程
 [中文链接](https://learnopengl-cn.github.io/ "国外大佬的中文教程网站")
