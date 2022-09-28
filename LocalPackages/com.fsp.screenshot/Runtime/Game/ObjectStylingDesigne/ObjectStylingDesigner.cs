@@ -7,10 +7,11 @@ using UnityEngine;
 
 namespace fsp.modelshot.Game.ObjectStylingDesigne
 {
+    // 管理策略们
     public class ObjectStylingDesigner : SingletonMonoBehavior<ObjectStylingDesigner>
     {
         public List<GameObject> curHoldGos = new List<GameObject>();
-        public CreateObjectPathSO createObjectPathConfig = null;
+        public ObjectStylingStrategySO Config = null;
         
         private void Start()
         {
@@ -19,9 +20,9 @@ namespace fsp.modelshot.Game.ObjectStylingDesigne
 
         private void initSO()
         {
-            if (createObjectPathConfig != null) return;
+            if (Config != null) return;
             int hashCode = Utility.GetHashCodeByAssetPath(ResourcesPathSetting.CREATEOBJECTPATHSO_VIRTUAL_FILE_PATH);
-            createObjectPathConfig = ResourceLoaderProxy.instance.LoadAsset<CreateObjectPathSO>(hashCode);
+            Config = ResourceLoaderProxy.instance.LoadAsset<ObjectStylingStrategySO>(hashCode);
         }
     }
 }

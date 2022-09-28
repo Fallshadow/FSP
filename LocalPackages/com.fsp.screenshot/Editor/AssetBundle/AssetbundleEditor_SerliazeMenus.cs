@@ -7,7 +7,7 @@ namespace fsp.modelshot.editor
 {
     public class AssetbundleEditor_SerliazeMenus
     {
-        [MenuItem("ModelShot/生成Ui资源",false,2)]
+        [MenuItem("ModelShot/1：生成Ui资源",false,2)]
         public static void SerializeAssetDepenceInfoForFastMode_UI()
         {
             EditorUtility.DisplayProgressBar("弹窗", "正在快速生成依赖信息...UI", 0.25f);
@@ -18,7 +18,7 @@ namespace fsp.modelshot.editor
             EditorUtility.ClearProgressBar();
         }
         
-        [MenuItem("ModelShot/刷新ModelShot_So资源", false, 3)]
+        [MenuItem("ModelShot/2：刷新ModelShot_So资源", false, 3)]
         private static void SerializeAssetDepenceInfoForFastMode_ScriptableObject()
         {
             EditorUtility.DisplayProgressBar("弹窗", "正在快速生成依赖信息...SO", 0.25f);
