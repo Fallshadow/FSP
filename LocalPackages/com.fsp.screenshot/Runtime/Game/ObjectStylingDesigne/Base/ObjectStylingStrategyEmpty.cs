@@ -2,12 +2,12 @@
 {
     public class ObjectStylingStrategyEmpty : ObjectStylingStrategyBase
     {
-        public override void Init()
+        public ObjectStylingStrategyEmpty(ObjectStylingStrategyInfo info) : base(info)
         {
             
         }
-
-        public ObjectStylingStrategyEmpty(ObjectStylingStrategyInfo info) : base(info)
+        
+        public override void ApplySubStrategy(int subStategyIndex)
         {
             
         }

@@ -9,8 +9,9 @@ namespace fsp.modelshot.Game.ObjectStylingDesigne
         public ObjectStylingType IdType;
         public string CreatePlanName;
         public string ResourceFolderAssetsPath;
-        public List<string> FileSuffixStrings;
-        public Vector3 Postion;
-        public List<ObjectStylingWorldTransInfo> ObjectInfos;
+        public List<string> FileSuffixStrings = new List<string>();
+        public Vector3 Postion = Vector3.zero;
+        public int MaxLayer = 1;
+        public List<ObjectStylingWorldTransInfo> ObjectInfos = new List<ObjectStylingWorldTransInfo>();
     }
 }

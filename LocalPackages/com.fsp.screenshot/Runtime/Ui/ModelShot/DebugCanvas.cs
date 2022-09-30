@@ -7,21 +7,25 @@ namespace fsp.modelshot.ui
     [BindingResource_ModelShot(UiAssetIndex.DebugCanvas)]
     public class DebugCanvas : FullScreenCanvasBase
     {
-        public Button testBtn;
+        public Button Rex_Weapon_Btn;
 
         public void OpenSelectModelCanvas()
         {
-            GameController_ModelShot.instance.FSM.SwitchToState((int) ModelShotGameFsmState.ENTRY_SELECT_MODEL);
+        }
+        
+        public void OpenRexWeaponCanvas()
+        {
+            GameController_ModelShot.instance.FSM.SwitchToState((int) ModelShotGameFsmState.REX_WEAPON);
         }
         
         public override void Initialize()
         {
-            testBtn.onClick.AddListener(OpenSelectModelCanvas);
+            Rex_Weapon_Btn.onClick.AddListener(OpenRexWeaponCanvas);
         }
 
         public override void Release()
         {
-            testBtn.onClick.RemoveListener(OpenSelectModelCanvas);
+            Rex_Weapon_Btn.onClick.RemoveListener(OpenRexWeaponCanvas);
         }
     }
 }

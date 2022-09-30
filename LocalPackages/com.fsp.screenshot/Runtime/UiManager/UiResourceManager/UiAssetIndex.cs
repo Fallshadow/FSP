@@ -5,5 +5,6 @@
         NONE = -1,
         DebugCanvas = 1,
         SelectModelCanvas = 2,
+        RexWeaponCanvas = 3,
     }
 }

@@ -3,9 +3,10 @@
     public enum ModelShotGameFsmState
     {
         ENTRYDEBUG,
+        LOAD_REX_WEAPON,
+        REX_WEAPON,
         ENTRY_SELECT_MODEL,
         LOAD_DEBUG,
-        LOAD_FASHION_SUIT, 
         LOAD_SELECT_MODEL, 
     }
 }

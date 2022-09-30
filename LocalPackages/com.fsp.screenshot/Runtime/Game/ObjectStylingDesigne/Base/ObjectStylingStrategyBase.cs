@@ -1,4 +1,7 @@
-﻿namespace fsp.modelshot.Game.ObjectStylingDesigne
+﻿using System;
+using System.Collections.Generic;
+
+namespace fsp.modelshot.Game.ObjectStylingDesigne
 {
     // 物体创造的策略基类，属于整体大策略，里面会有自己的物体摆放细节
     // 简单来说做这样几件事：
@@ -10,11 +13,29 @@
     // 销毁策略信息
     public abstract class ObjectStylingStrategyBase
     {
+        public List<String> ObjectNames = new List<string>();
+        public List<String> SubStrategyNames = new List<string>();
+        public ObjectStylingStrategyInfo curInfo = null;
+
+        private ObjectStylingStrategySkeleton osSkeleton = new ObjectStylingStrategySkeleton();
+        
         protected ObjectStylingStrategyBase(ObjectStylingStrategyInfo info)
         {
-            
+            curInfo = info;
+            Init();
         }
-        
-        public abstract void Init();
+
+        public virtual void Init()
+        {
+            osSkeleton.Init(curInfo.MaxLayer);
+        }
+
+        public virtual void Release()
+        {
+            osSkeleton.Release();
+        }
+
+        // 使用哪种物件骨骼信息
+        public abstract void ApplySubStrategy(int subStategyIndex);
     }
 }

@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6815f54d124fa8e4c91921c33e9bd465, type: 3}
   m_Name: ObjectStylingStrategySO
   m_EditorClassIdentifier: 
-  ObjectPathStructs: []
+  ObjectPathStructs:
+  - IdType: 1
+    CreatePlanName: "Rex\u6B66\u5668\u5E93\u6A21\u578B"
+    ResourceFolderAssetsPath: Assets/ResourceRex/equipment/Weapon
+    FileSuffixStrings:
+    - .prefab
+    Postion: {x: 0, y: 0, z: 0}
+    MaxLayer: 1
+    ObjectInfos:
+    - Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 0, y: 0, z: 0}
+      SkeletonLayer: 0

@@ -16,6 +16,8 @@ namespace fsp.modelshot.Game
         {
             FSM.Initialize(this);
             FSM.AddState((int) ModelShotGameFsmState.ENTRYDEBUG, new ModelShotEntry());
+            FSM.AddState((int) ModelShotGameFsmState.LOAD_REX_WEAPON, new LoadRexWeaponScene(this));
+            FSM.AddState((int) ModelShotGameFsmState.REX_WEAPON, new ModelShotRexWeapon());
             FSM.AddState((int) ModelShotGameFsmState.ENTRY_SELECT_MODEL, new ModelShotFreeSelect());
         }
 

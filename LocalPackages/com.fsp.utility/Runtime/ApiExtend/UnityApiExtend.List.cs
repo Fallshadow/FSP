@@ -5,6 +5,14 @@ namespace fsp
 {
     public static partial class UnityApiExtend
     {
+        public static void Expand<T>(this List<T> list, int index)
+        {
+            while (index >= list.Count)
+            {
+                list.Add(default);
+            }
+        }
+        
         public static bool IsNullOrEmpty<T>(this List<T> list)
         {
             return list == null || list.Count == 0;
