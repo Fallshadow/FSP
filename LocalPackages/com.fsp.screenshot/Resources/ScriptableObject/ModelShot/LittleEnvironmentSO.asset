@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d07a826ae04d14fb107b63e2ee3e47, type: 3}
+  m_Name: LittleEnvironmentSO
+  m_EditorClassIdentifier: 
+  littleEnvironmentInfos:
+  - environmentName: "\u73AF\u5883\u2014\u2014\u65A9\u88C2\u5200"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_Knife
+  - environmentName: "\u73AF\u5883\u2014\u2014\u9524\u5B50"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_Hammer
+  - environmentName: "\u73AF\u5883\u2014\u2014\u53CC\u5200"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_DualBlade
+  - environmentName: "\u73AF\u5883\u2014\u2014\u5851\u80FD\u67AA"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_KallaGun
+  - environmentName: "\u73AF\u5883\u2014\u2014\u9972\u7075\u67AA"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_Spear
+  - environmentName: "\u73AF\u5883\u2014\u2014\u5F13\u7BAD"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_Bow

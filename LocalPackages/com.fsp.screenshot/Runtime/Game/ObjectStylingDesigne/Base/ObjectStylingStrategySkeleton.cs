@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace fsp.modelshot.Game.ObjectStylingDesigne
+namespace fsp.ObjectStylingDesigne
 {
     // 结构 root -> layer_0 和 所有layer_0的物体 -> layer_1 和 所有layer_1的物体……
     public class ObjectStylingStrategySkeleton

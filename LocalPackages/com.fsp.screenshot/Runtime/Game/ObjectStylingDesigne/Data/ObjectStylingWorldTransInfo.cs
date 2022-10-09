@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace fsp.modelshot.Game.ObjectStylingDesigne
+namespace fsp.ObjectStylingDesigne
 {
     [System.Serializable]
     public class ObjectStylingWorldTransInfo

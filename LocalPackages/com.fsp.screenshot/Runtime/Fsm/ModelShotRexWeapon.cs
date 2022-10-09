@@ -1,9 +1,6 @@
-﻿using fsp.modelshot.Game.ObjectStylingDesigne;
-using fsp.modelshot.ui;
+﻿using fsp.modelshot.ui;
 using fsp.ui;
 using fsp.utility;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace fsp.modelshot
 {

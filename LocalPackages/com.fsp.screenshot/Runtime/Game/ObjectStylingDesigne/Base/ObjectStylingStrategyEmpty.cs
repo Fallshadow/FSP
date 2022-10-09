@@ -1,4 +1,4 @@
-﻿namespace fsp.modelshot.Game.ObjectStylingDesigne
+﻿namespace fsp.ObjectStylingDesigne
 {
     public class ObjectStylingStrategyEmpty : ObjectStylingStrategyBase
     {
@@ -8,6 +8,11 @@
         }
         
         public override void ApplySubStrategy(int subStategyIndex)
+        {
+            
+        }
+
+        public override void LoadObject(string objectFilePath)
         {
             
         }

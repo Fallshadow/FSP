@@ -8,8 +8,7 @@ namespace fsp.modelshot.ui
     {
         protected override void loadAssetHashMap_UI()
         {
-            int assetMapId = Utility.GetHashCodeByAssetPath(data.ResourcesPathSetting.ASSETHASHMAP_UI_VIRTUAL_FILE_PATH);
-            uiSO = ResourceLoaderProxy.instance.LoadAsset<AssetHashMap_UI>(assetMapId);
+            uiSO = ResourceLoaderProxy.instance.LoadAsset<AssetHashMap_UI>(data.ResourcesPathSetting.ASSETHASHMAP_UI_VIRTUAL_FILE_PATH);
         }
     }
 }

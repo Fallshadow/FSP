@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using fsp.assetbundlecore;
 using fsp.modelshot.data;
-using fsp.utility;
-using UnityEngine;
 
-namespace fsp.modelshot.Game.ObjectStylingDesigne
+namespace fsp.ObjectStylingDesigne
 {
     // 管理策略们
     public class ObjectStylingDesigner : SingletonMonoBehavior<ObjectStylingDesigner>
@@ -18,11 +15,10 @@ namespace fsp.modelshot.Game.ObjectStylingDesigne
             initSO();
         }
 
-        private void initSO()
+        protected virtual void initSO()
         {
             if (Config != null) return;
-            int hashCode = Utility.GetHashCodeByAssetPath(ResourcesPathSetting.CREATEOBJECTPATHSO_VIRTUAL_FILE_PATH);
-            Config = ResourceLoaderProxy.instance.LoadAsset<ObjectStylingStrategySO>(hashCode);
+            Config = ResourceLoaderProxy.instance.LoadAsset<ObjectStylingStrategySO>(ResourcesPathSetting.CREATEOBJECTPATHSO_VIRTUAL_FILE_PATH);
         }
 
         public ObjectStylingStrategyBase CreateOrGetStrategy(ObjectStylingType type)

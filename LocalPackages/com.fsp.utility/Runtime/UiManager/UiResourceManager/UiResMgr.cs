@@ -47,8 +47,7 @@ namespace fsp.ui
 
         protected virtual void loadAssetHashMap_UI()
         {
-            int assetMapId = Utility.GetHashCodeByAssetPath(data.ResourcesPathSetting.EDITOR_TIMELINE_LEFT_SHADOW);
-            uiSO = ResourceLoaderProxy.instance.LoadAsset<AssetHashMap_UI>(assetMapId);
+            uiSO = ResourceLoaderProxy.instance.LoadAsset<AssetHashMap_UI>(data.ResourcesPathSetting.EDITOR_TIMELINE_LEFT_SHADOW);
         }
     }
 }

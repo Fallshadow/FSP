@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace fsp.modelshot.Game.ObjectStylingDesigne
+namespace fsp.ObjectStylingDesigne
 {
     [System.Serializable]
     public class ObjectStylingStrategyInfo
@@ -12,6 +12,5 @@ namespace fsp.modelshot.Game.ObjectStylingDesigne
         public List<string> FileSuffixStrings = new List<string>();
         public Vector3 Postion = Vector3.zero;
         public int MaxLayer = 1;
-        public List<ObjectStylingWorldTransInfo> ObjectInfos = new List<ObjectStylingWorldTransInfo>();
     }
 }

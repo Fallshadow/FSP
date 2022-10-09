@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50d5aa5f6cf5e54b9c192e90f38af6f, type: 3}
+  m_Name: UiStyleHelperSO
+  m_EditorClassIdentifier: 
+  GrayscaleMat: {fileID: 2100000, guid: 933556ecf9f4fe34c8295220a34ffde0, type: 2}
+  GrayscaleGlowMat: {fileID: 2100000, guid: 14c208672c9ec8543a59294bb4ba0221, type: 2}

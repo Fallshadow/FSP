@@ -1,4 +1,6 @@
 ﻿using fsp.debug;
+using fsp.utility;
+using UnityEditor;
 using UnityEngine;
 
 namespace fsp.assetbundlecore
@@ -9,6 +11,20 @@ namespace fsp.assetbundlecore
         public bool IsInited = false;
         
         protected ResourceLoaderManager manager;
+        
+        //只能当作临时开放的接口
+        public T LoadAsset<T>(string assetPath) where T : Object
+        {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return AssetDatabase.LoadAssetAtPath<T>(assetPath);
+            }
+#endif
+            
+            int hash = Utility.GetHashCodeByAssetPath(assetPath);
+            return manager.LoadAsset<T>(hash);
+        }
         
         public T LoadAsset<T>(int hashCode) where T : Object
         {

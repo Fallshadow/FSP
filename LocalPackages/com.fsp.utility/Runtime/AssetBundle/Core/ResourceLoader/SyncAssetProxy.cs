@@ -12,17 +12,17 @@ namespace fsp.assetbundlecore
         
         public int GetHash()
         {
-            throw new System.NotImplementedException();
+            return -1;
         }
 
         public int GetABHash()
         {
-            throw new System.NotImplementedException();
+            return -1;
         }
 
         public int GetTypeHash()
         {
-            throw new System.NotImplementedException();
+            return -1;
         }
 
         public virtual void Addreference()
@@ -37,12 +37,12 @@ namespace fsp.assetbundlecore
 
         public void Destroy()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void ZeroReference()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public virtual void Begin()

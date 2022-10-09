@@ -1,4 +1,4 @@
-﻿namespace fsp.modelshot.Game.ObjectStylingDesigne
+﻿namespace fsp.ObjectStylingDesigne
 {
     public static class ObjectStylingFactory
     {

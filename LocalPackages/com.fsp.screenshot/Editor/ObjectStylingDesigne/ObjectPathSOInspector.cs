@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using fsp.editor;
 using fsp.eutility;
-using fsp.modelshot.Game.ObjectStylingDesigne;
 using UnityEditor;
 using UnityEngine;
 
-namespace fsp.modelshot.editor.ObjectStylingDesigne
+namespace fsp.ObjectStylingDesigne
 {
     [CustomEditor(typeof(ObjectStylingStrategySO))]
     public class ObjectStylingStrategySOInspector : Editor
@@ -57,22 +56,6 @@ namespace fsp.modelshot.editor.ObjectStylingDesigne
                                     {
                                         item.FileSuffixStrings[index] ??= "";
                                         item.FileSuffixStrings[index] = EditorGUILayout.TextField(item.FileSuffixStrings[index]);
-                                    }
-                                }
-                            }, 1);
-                            
-                            EUtility.ListTEditorShowNewT(item.ObjectInfos, "物体详细信息", ref objectInfoFoldOut, () =>
-                            {
-                                using (new GUISubFeild(1))
-                                {
-                                    for (int osIndex = 0; osIndex < item.ObjectInfos.Count; osIndex++)
-                                    {
-                                        EditorGUILayout.LabelField($"第{osIndex}个");
-                                        ObjectStylingWorldTransInfo oSWorldTransInfo = item.ObjectInfos[osIndex];
-                                        oSWorldTransInfo.Position = EditorGUILayout.Vector3Field("相对Pos", oSWorldTransInfo.Position);
-                                        oSWorldTransInfo.Rotation = EditorGUILayout.Vector3Field("相对Rot", oSWorldTransInfo.Rotation);
-                                        oSWorldTransInfo.Scale = EditorGUILayout.Vector3Field("相对Scale", oSWorldTransInfo.Scale);
-                                        oSWorldTransInfo.SkeletonLayer = EditorGUILayout.IntField("层级", oSWorldTransInfo.SkeletonLayer);
                                     }
                                 }
                             }, 1);

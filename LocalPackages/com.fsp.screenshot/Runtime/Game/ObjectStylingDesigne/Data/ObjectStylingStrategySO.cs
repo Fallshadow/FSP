@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace fsp.modelshot.Game.ObjectStylingDesigne
+namespace fsp.ObjectStylingDesigne
 {
     // 如果有很多方案（物件创造）是不是可以换成bytes 列表分类存储
     [CreateAssetMenu]

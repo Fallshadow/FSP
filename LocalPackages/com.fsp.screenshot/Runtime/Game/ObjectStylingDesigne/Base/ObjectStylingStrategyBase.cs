@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace fsp.modelshot.Game.ObjectStylingDesigne
+namespace fsp.ObjectStylingDesigne
 {
     // 物体创造的策略基类，属于整体大策略，里面会有自己的物体摆放细节
     // 简单来说做这样几件事：
@@ -15,9 +16,11 @@ namespace fsp.modelshot.Game.ObjectStylingDesigne
     {
         public List<String> ObjectNames = new List<string>();
         public List<String> SubStrategyNames = new List<string>();
+        public List<GameObject> Objects = new List<GameObject>();
         public ObjectStylingStrategyInfo curInfo = null;
 
-        private ObjectStylingStrategySkeleton osSkeleton = new ObjectStylingStrategySkeleton();
+        protected ObjectStylingStrategySkeleton osSkeleton = new ObjectStylingStrategySkeleton();
+        protected List<ObjectStylingWorldTransInfo> objectWorldInfos = new List<ObjectStylingWorldTransInfo>();
         
         protected ObjectStylingStrategyBase(ObjectStylingStrategyInfo info)
         {
@@ -35,7 +38,23 @@ namespace fsp.modelshot.Game.ObjectStylingDesigne
             osSkeleton.Release();
         }
 
-        // 使用哪种物件骨骼信息
+        // 使用哪种套路的骨骼信息
         public abstract void ApplySubStrategy(int subStategyIndex);
+        
+        // 加载具体哪种objects信息
+        public abstract void LoadObject(string objectFilePath);
+
+        protected virtual void stylingObejcts()
+        {
+            if (objectWorldInfos.Count == 0 || Objects.Count == 0) return;
+            for (int index = 0; index < Objects.Count; index++)
+            {
+                if (objectWorldInfos.Count < index + 1) break;
+                Objects[index].transform.SetParent(osSkeleton.GetLayerTransform(objectWorldInfos[index].SkeletonLayer));
+                Objects[index].transform.position = objectWorldInfos[index].Position;
+                Objects[index].transform.eulerAngles = objectWorldInfos[index].Rotation;
+                Objects[index].transform.localScale = objectWorldInfos[index].Scale;
+            }
+        }
     }
 }
