@@ -61,3 +61,63 @@ MonoBehaviour:
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+  - WorldInfoName: "\u80F8\u7532"
+    CInfos:
+    - Position: {x: 0, y: -3.64, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 3, y: 3, z: 3}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u81C2\u94E0"
+    CInfos:
+    - Position: {x: -1.28, y: -3.64, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 3, y: 3, z: 3}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u817F\u7532"
+    CInfos:
+    - Position: {x: 0, y: -2, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 3, y: 3, z: 3}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u80A9\u7532"
+    CInfos:
+    - Position: {x: 0, y: -3.64, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 3, y: 3, z: 3}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u5934\u76D4"
+    CInfos:
+    - Position: {x: 0, y: -5.17, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 3, y: 3, z: 3}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u65F6\u88C5\u6302\u4EF6\u2014\u2014\u60AC\u6D6E"
+    CInfos:
+    - Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u65F6\u88C5\u6302\u4EF6\u2014\u2014\u5934\u90E8"
+    CInfos:
+    - Position: {x: 0, y: -1.58, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u65F6\u88C5\u6302\u4EF6\u2014\u2014\u80CC\u90E8"
+    CInfos:
+    - Position: {x: 0, y: -1.2, z: 0}
+      Rotation: {x: 0, y: 180, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u65F6\u88C5\u6302\u4EF6\u2014\u2014\u5C3E\u90E8"
+    CInfos:
+    - Position: {x: 0.31, y: -0.13, z: 0}
+      Rotation: {x: 0, y: 90, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u9ED8\u8BA4\u65B9\u6848"
+    CInfos:
+    - Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+      SkeletonLayer: 0

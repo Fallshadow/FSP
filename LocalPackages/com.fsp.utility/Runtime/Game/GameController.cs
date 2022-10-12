@@ -71,5 +71,15 @@ namespace fsp.utility
         {
             FSM.Finalize();
         }
+
+        public virtual void SetNextState(int state)
+        {
+            
+        }
+        
+        public virtual int GetNextState()
+        {
+            return -1;
+        }
     }
 }

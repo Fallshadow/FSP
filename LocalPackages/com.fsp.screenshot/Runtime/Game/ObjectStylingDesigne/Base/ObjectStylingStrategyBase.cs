@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using fsp.utility;
+using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace fsp.ObjectStylingDesigne
 {
@@ -16,6 +19,10 @@ namespace fsp.ObjectStylingDesigne
     {
         public List<String> ObjectNames = new List<string>();
         public List<String> SubStrategyNames = new List<string>();
+        // 另开的子策略，以备特殊需求
+        public List<String> Sub2StrategyNames = new List<string>();
+        protected int curSubStategyIndex = -1;
+        protected int curSub2StategyIndex = -1;
         public List<GameObject> Objects = new List<GameObject>();
         public ObjectStylingStrategyInfo curInfo = null;
 
@@ -40,10 +47,37 @@ namespace fsp.ObjectStylingDesigne
 
         // 使用哪种套路的骨骼信息
         public abstract void ApplySubStrategy(int subStategyIndex);
+        public abstract void ApplySub2Strategy(int sub2StategyIndex);
         
         // 加载具体哪种objects信息
-        public abstract void LoadObject(string objectFilePath);
-
+        public virtual void LoadObject(string objectFilePath)
+        {
+            Object prefab0 = null;
+            foreach (var item in Objects)
+            {
+                Object.DestroyImmediate(item);
+            }
+            Objects.Clear();
+            prefab0 = AssetDatabase.LoadAssetAtPath<Object>(objectFilePath);
+            if (objectWorldInfos == null || prefab0 == null) return;
+            Objects.Add(Utility.InstantiateObject(prefab0));
+            stylingObejcts();
+        }
+        
+        
+        // 通过文件名称构建ObjectStringPath
+        protected virtual ObjectStringPath getObjectStringPath(string modelName)
+        {
+            string assetPath = modelName.Replace(Application.dataPath, "");
+            int lastIndex = assetPath.LastIndexOf("/", StringComparison.Ordinal);
+            string lastString = assetPath.Substring(lastIndex + 1, assetPath.Length - lastIndex - 1);
+            return new ObjectStringPath()
+            {
+                FilePath = assetPath,
+                FilterName = lastString
+            };
+        }
+        
         protected virtual void stylingObejcts()
         {
             if (objectWorldInfos.Count == 0 || Objects.Count == 0) return;

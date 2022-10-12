@@ -29,7 +29,10 @@ namespace fsp.ObjectStylingDesigne
         public void Release()
         {
             if (layerTranses.Count == 0) return;
-            Object.Destroy(layerTranses[0].gameObject);
+            if (layerTranses[0] != null)
+            {
+                Object.Destroy(layerTranses[0]?.gameObject);
+            }
             layerTranses.Clear();
         }
         

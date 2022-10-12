@@ -6,5 +6,10 @@
         DebugCanvas = 1,
         SelectModelCanvas = 2,
         RexWeaponCanvas = 3,
+        RexEquipmentCanvas = 4,
+        RexFashionPendantCanvas = 5,
+        RexFashionWeaponCanvas = 6,
+        RexPetCanvas = 7,
+        RexSuitCanvas = 8,
     }
 }

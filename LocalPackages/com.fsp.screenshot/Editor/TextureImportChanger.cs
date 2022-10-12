@@ -20,16 +20,19 @@ namespace fsp.modelshot.editor
 
         private const string _standalone = "Standalone";
         private const string _iPhone = "iPhone";
+        private const string _default = "Default";
         private const string _android = "Android";
         private static string assetPath = "Assets\\Resources";
         private static TextureImporterFormat formatAlpha = TextureImporterFormat.ASTC_5x5;
         private static TextureImporterFormat formatDefault = TextureImporterFormat.ASTC_5x5;
+        private static int maxSize = 2048;
 
         [SerializeField] //必须要加
         public List<string> searchPatterns = new List<string>(2)
         {
             "*.png",
             "*.jpg",
+            "*.tga",
         };
 
         
@@ -47,6 +50,7 @@ namespace fsp.modelshot.editor
 
             formatAlpha = (TextureImporterFormat) EditorGUILayout.EnumPopup("formatAlpha: ", formatAlpha, GUILayout.Width(300));
             formatDefault = (TextureImporterFormat) EditorGUILayout.EnumPopup("formatDefault: ", formatDefault, GUILayout.Width(300));
+            maxSize = EditorGUILayout.IntField("MaxSize: ", maxSize, GUILayout.Width(300));
 
             EditorGUILayout.PropertyField(serializedProperty, true);
 
@@ -70,7 +74,7 @@ namespace fsp.modelshot.editor
             }
         }
 
-        private static void ImporterFiles(string dir, string searchPattern)
+        private static void  ImporterFiles(string dir, string searchPattern)
         {
             string[] files = Directory.GetFiles(dir, searchPattern, SearchOption.AllDirectories);
             float i = 0;
@@ -108,14 +112,26 @@ namespace fsp.modelshot.editor
                 {
                     overridden = false,
                     name = _standalone,
-                    maxTextureSize = 2048,
+                    maxTextureSize = maxSize,
                     format = TextureImporterFormat.Automatic,
                     textureCompression = TextureImporterCompression.Compressed,
                     resizeAlgorithm = TextureResizeAlgorithm.Mitchell
                 });
             }
-
-
+            
+            settings = ti.GetPlatformTextureSettings(_default);
+            if (settings.format != TextureImporterFormat.ARGB32)
+            {
+                ti.SetPlatformTextureSettings(new TextureImporterPlatformSettings
+                {
+                    name = _default,
+                    maxTextureSize = maxSize,
+                    format = TextureImporterFormat.Automatic,
+                    textureCompression = TextureImporterCompression.Compressed,
+                    resizeAlgorithm = TextureResizeAlgorithm.Mitchell
+                });
+            }
+            
 //#if UNITY_IOS 暂时设置为相同格式
             settings = ti.GetPlatformTextureSettings(_iPhone);
             if (settings.format != format)
@@ -124,7 +140,7 @@ namespace fsp.modelshot.editor
                 {
                     overridden = true,
                     name = _iPhone,
-                    maxTextureSize = 2048,
+                    maxTextureSize = maxSize,
                     format = format,
                     textureCompression = TextureImporterCompression.Compressed,
                     resizeAlgorithm = TextureResizeAlgorithm.Mitchell
@@ -139,7 +155,7 @@ namespace fsp.modelshot.editor
                 {
                     overridden = true,
                     name = _android,
-                    maxTextureSize = 2048,
+                    maxTextureSize = maxSize,
                     format = format,
                     textureCompression = TextureImporterCompression.Compressed,
                     resizeAlgorithm = TextureResizeAlgorithm.Mitchell

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9505460a03f7547bd39c3f58b4c30a, type: 3}
+  m_Name: CameraSchemeSO
+  m_EditorClassIdentifier: 
+  M_LightDatas:
+  - Name: "\u5BA0\u7269\u76F8\u673A"
+    XValue: -0.151603
+    YValue: 0.7515639
+    ZValue: 2.7
+    FOVValue: 60
+    SpeedValue: 3.133452
+    OrthoMode: 0
+  - Name: "\u9ED8\u8BA4\u65A9\u88C2\u5200"
+    XValue: 0.515088
+    YValue: -0.4198943
+    ZValue: 1.9
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0
+  - Name: "\u9ED8\u8BA4\u9524\u5B50"
+    XValue: 0.2195536
+    YValue: -0.2231444
+    ZValue: 2
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0
+  - Name: "\u9ED8\u8BA4\u53CC\u5200"
+    XValue: -0.01437098
+    YValue: -0.2231444
+    ZValue: 1.4
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0
+  - Name: "\u9ED8\u8BA4\u5851\u80FD\u67AA"
+    XValue: -0.01647997
+    YValue: -0.07142539
+    ZValue: 1.4
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0
+  - Name: "\u9ED8\u8BA4\u9972\u7075\u67AA"
+    XValue: 0.101918
+    YValue: -0.3249956
+    ZValue: 2.999999
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0
+  - Name: "\u9ED8\u8BA4\u5F13\u7BAD"
+    XValue: 0
+    YValue: 0
+    ZValue: 4
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0
+  - Name: "\u9ED8\u8BA4\u76F8\u673A"
+    XValue: 0
+    YValue: 0
+    ZValue: 4.599999
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0

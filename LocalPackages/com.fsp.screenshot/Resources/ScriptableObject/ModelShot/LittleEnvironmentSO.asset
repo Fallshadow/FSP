@@ -25,3 +25,9 @@ MonoBehaviour:
     environmentPath: Environment\PhotoStudio\PhotoStudio_Spear
   - environmentName: "\u73AF\u5883\u2014\u2014\u5F13\u7BAD"
     environmentPath: Environment\PhotoStudio\PhotoStudio_Bow
+  - environmentName: "\u73AF\u5883\u2014\u2014\u88C5\u5907"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_Armor
+  - environmentName: "\u73AF\u5883\u2014\u2014\u65F6\u88C5\u6302\u4EF6"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_GuaJian
+  - environmentName: "\u73AF\u5883\u2014\u2014\u5BA0\u7269"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_Pet

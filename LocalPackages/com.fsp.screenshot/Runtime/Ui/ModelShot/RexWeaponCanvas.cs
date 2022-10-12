@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using fsp.LittleSceneEnvironment;
 using fsp.ObjectStylingDesigne;
-using fsp.ui;
 using fsp.ui.utility;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +8,7 @@ using UnityEngine.UI;
 namespace fsp.modelshot.ui
 {
     [BindingResource_ModelShot(UiAssetIndex.RexWeaponCanvas)]
-    public class RexWeaponCanvas : FullScreenCanvasBase
+    public class RexWeaponCanvas : CaptureScreenShotCanvasBase
     {
         [SerializeField] private Transform weaponGroupRoot = null;
         [SerializeField] private ModelViewerStringPathUiItem weaponGroupPrefab = null;
@@ -25,6 +24,7 @@ namespace fsp.modelshot.ui
 
         public override void Initialize()
         {
+            base.Initialize();
             _rexEditorWeapon = (ObjectStylingStrategyRexEditorWeapon)ObjectStylingDesigner.instance.CreateOrGetStrategy(ObjectStylingType.RexEditor_Weapon_Library);
             initWeaponGroup();
             initWeaponGroupDatas();
@@ -32,6 +32,7 @@ namespace fsp.modelshot.ui
 
         public override void Release()
         {
+            base.Release();
             ObjectStylingDesigner.instance.ReleaseStrategy(ObjectStylingType.RexEditor_Weapon_Library);
         }
 

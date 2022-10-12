@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace fsp.modelshot
 {
-    public class LoadRexWeaponScene : LoadScene
+    public class LoadModelShotEntry : LoadScene
     {
-        public LoadRexWeaponScene(MonoBehaviour monoP) : base(monoP)
+        public LoadModelShotEntry(MonoBehaviour monoP) : base(monoP)
         {
-            scene_Name = "ModelShot_RexWeapon";
+            scene_Name = "ModelShot_Entry";
         }
 
         protected override void onEnter()
@@ -27,7 +27,7 @@ namespace fsp.modelshot
 
         protected override void onLoadingEnd()
         {
-            m_fsm.SwitchToState((int)ModelShotGameFsmState.REX_WEAPON);
+            m_fsm.SwitchToState((int)ModelShotGameFsmState.ENTRYDEBUG);
         }
 
         protected override int levelId()

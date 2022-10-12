@@ -1,22 +1,24 @@
-﻿using fsp.ui;
-using UnityEngine.UI;
+﻿using fsp.ObjectStylingDesigne;
+using fsp.ui;
+using UnityEngine;
 
 namespace fsp.modelshot.ui
 {
     [BindingResource_ModelShot(UiAssetIndex.SelectModelCanvas)]
     public class SelectModelCanvas : FullScreenCanvasBase
     {
-        public Button testBtn;
-            
-                
+        [Header("配置项")]
+        public SelectModelActionPanel ActionPanel = null;
+        public SelectAndInitModelPanel ModelPanel = null;
         public override void Initialize()
         {
-
-        }
-
-        public override void Release()
-        {
-
+            base.Initialize();
+            ActionPanel.InitPanel(this);
+            ModelPanel.InitPanel();
+            ModelPanel.selectCallBackGO += o =>
+            {
+                ActionPanel.SetDisplayGO(o);
+            };
         }
     }
 }

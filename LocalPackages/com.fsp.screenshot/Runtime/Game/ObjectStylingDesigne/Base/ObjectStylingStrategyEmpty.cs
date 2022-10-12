@@ -12,6 +12,11 @@
             
         }
 
+        public override void ApplySub2Strategy(int sub2StategyIndex)
+        {
+            
+        }
+
         public override void LoadObject(string objectFilePath)
         {
             

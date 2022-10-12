@@ -17,9 +17,6 @@ namespace fsp.ObjectStylingDesigne
         public List<ObjectStringPath> ObjectNameList_4_Spear     = new List<ObjectStringPath>();
         public List<ObjectStringPath> ObjectNameList_5_Bow       = new List<ObjectStringPath>();
 
-        private int curSubStategyIndex = -1;
-        
-        
         public ObjectStylingStrategyRexEditorWeapon(ObjectStylingStrategyInfo info) : base(info)
         {
             
@@ -64,6 +61,11 @@ namespace fsp.ObjectStylingDesigne
                 case 4: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("Rex_Spear"); break;
                 case 5: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("Rex_Bow"); break;
             }
+        }
+
+        public override void ApplySub2Strategy(int sub2StategyIndex)
+        {
+            
         }
 
         public override void LoadObject(string objectFilePath)
@@ -112,20 +114,6 @@ namespace fsp.ObjectStylingDesigne
             }
 
             stylingObejcts();
-        }
-
-        
-
-        private ObjectStringPath getObjectStringPath(string modelName)
-        {
-            string assetPath = modelName.Replace(Application.dataPath, "");
-            int lastIndex = assetPath.LastIndexOf("\\", StringComparison.Ordinal);
-            string lastString = assetPath.Substring(lastIndex + 1, assetPath.Length - lastIndex - 1);
-            return new ObjectStringPath()
-            {
-                FilePath = assetPath,
-                FilterName = lastString
-            };
         }
     }
 }
