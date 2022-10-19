@@ -7,6 +7,7 @@
         public const string APPLICATIONPATH_SAMPLE_SCENE = "../Packages/com.fsp.screenshot/Samples";
         public const string UI_PREFABS_FOLDER = "/Prefabs";
         public const string ScriptableObject_FOLDER = "Packages/com.fsp.screenshot/Resources/ScriptableObject/";
+        public const string Sample_FOLDER = "Packages/com.fsp.screenshot/Samples/";
         
         // File Path
         public const string ASSETHASHMAP_UI_VIRTUAL_FILE_PATH    = ScriptableObject_FOLDER + "ModelShot/AssetHashMap_UI_ModelShot.asset";

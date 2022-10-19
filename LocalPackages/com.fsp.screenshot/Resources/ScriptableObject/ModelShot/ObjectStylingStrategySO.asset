@@ -51,3 +51,15 @@ MonoBehaviour:
     FileSuffixStrings: []
     Postion: {x: 0, y: 0, z: 0}
     MaxLayer: 1
+  - IdType: 7
+    CreatePlanName: "\u81EA\u7531\u622A\u56FE"
+    ResourceFolderAssetsPath: "\u65E0"
+    FileSuffixStrings: []
+    Postion: {x: 0, y: 0, z: 0}
+    MaxLayer: 1
+  - IdType: 8
+    CreatePlanName: "RexDebug\u4E0B\u9879\u76EE\u602A\u7269\u5E93\u7B56\u7565"
+    ResourceFolderAssetsPath: Assets\ResourceRex\Character\Monster
+    FileSuffixStrings: []
+    Postion: {x: 0, y: 0, z: 0}
+    MaxLayer: 1

@@ -26,6 +26,7 @@ namespace fsp.modelshot.ui
         {
             base.Initialize();
             _rexEditorFashionPendant = (ObjectStylingStrategyRexEditorPendant) ObjectStylingDesigner.instance.CreateOrGetStrategy(ObjectStylingType.RexEditor_Fashion_Pendant_Library);
+            DragArea.OnDragHandler += _rexEditorFashionPendant.RotateZeroTransY;
             initFashionPendantGroup();
             initFashionPendantGroupDatas();
         }
@@ -33,6 +34,7 @@ namespace fsp.modelshot.ui
         public override void Release()
         {
             base.Release();
+            DragArea.OnDragHandler -= _rexEditorFashionPendant.RotateZeroTransY;
             ObjectStylingDesigner.instance.ReleaseStrategy(ObjectStylingType.RexEditor_Fashion_Pendant_Library);
         }
 

@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicRaycaster: {fileID: 8821138716006584486}
   commonFuncMono: {fileID: 2176452803516758513}
+  DragArea: {fileID: 2570635433761594637}
   EquipmentGroupRoot: {fileID: 8369805486252769171}
   EquipmentGroupPrefab: {fileID: 1219061692229062987}
   EquipmentGroupDatasRoot: {fileID: 3983664538174795529}
@@ -272,6 +273,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3231fda77d4a99940a4f0c80b6c36fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2570635433761594637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1095440064342862525, guid: 9800dee850f194a4f9a2717bc5a7bdec,
+    type: 3}
+  m_PrefabInstance: {fileID: 3215415798177167280}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb75bbde898eeb4b86ffcb105a59140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6387958647386016644

@@ -7,6 +7,14 @@ namespace fsp.modelshot.editor
 {
     public class AssetbundleEditor_SerliazeMenus
     {
+        [MenuItem("ModelShot/一键配置环境",false,2)]
+        public static void 一键配置环境()
+        {
+            SerializeAssetDepenceInfoForFastMode_UI();
+            SerializeAssetDepenceInfoForFastMode_ScriptableObject();
+            ModelShotPrepareWork.AddSampleToBuildingSetting();
+        }
+        
         [MenuItem("ModelShot/1：生成Ui资源",false,2)]
         public static void SerializeAssetDepenceInfoForFastMode_UI()
         {

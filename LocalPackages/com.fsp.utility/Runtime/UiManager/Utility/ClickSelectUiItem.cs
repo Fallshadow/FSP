@@ -9,6 +9,7 @@ namespace fsp.ui.utility
     {
         CSUIT_NONE = -1,
         CSUIT_DEFAULT = 0,
+        CSUIT_DEFAULT_1 = 1,
     }
 
     public class ClickSelectUiItem : UiItem

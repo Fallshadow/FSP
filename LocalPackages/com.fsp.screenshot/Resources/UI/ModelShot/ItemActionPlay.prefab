@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4231985627769454396}
   - component: {fileID: 591070703228129844}
   - component: {fileID: 1868130804194241061}
-  - component: {fileID: 4184824222023824219}
+  - component: {fileID: 7116208131400302499}
   m_Layer: 5
   m_Name: PreFrame
   m_TagString: Untagged
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4184824222023824219
+--- !u!114 &7116208131400302499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 203358747642207930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af91097e152e4e4d9826406e4127259, type: 3}
+  m_Script: {fileID: 11500000, guid: 62e972975eabf5742955032cc5329d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -123,10 +123,9 @@ MonoBehaviour:
       m_Calls: []
   DoBaseTransition: 1
   uiAudioId: 0
-  soundId: Play_ui_no_sound
+  soundId: 
   glowBg: {fileID: 0}
   glowMat: {fileID: 0}
-  btnTitle: {fileID: 0}
 --- !u!1 &212905592044053946
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +430,7 @@ GameObject:
   - component: {fileID: 362108325986936972}
   - component: {fileID: 5739605499634138883}
   - component: {fileID: 5107840544752827675}
-  - component: {fileID: 9052054941847449599}
+  - component: {fileID: 6343450634865085105}
   m_Layer: 5
   m_Name: PlayOrPause
   m_TagString: Untagged
@@ -498,7 +497,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9052054941847449599
+--- !u!114 &6343450634865085105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,7 +506,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 440561212420351920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af91097e152e4e4d9826406e4127259, type: 3}
+  m_Script: {fileID: 11500000, guid: 62e972975eabf5742955032cc5329d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -544,10 +543,9 @@ MonoBehaviour:
       m_Calls: []
   DoBaseTransition: 1
   uiAudioId: 0
-  soundId: Play_ui_no_sound
+  soundId: 
   glowBg: {fileID: 0}
   glowMat: {fileID: 0}
-  btnTitle: {fileID: 0}
 --- !u!1 &513148546851241524
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +787,7 @@ GameObject:
   - component: {fileID: 6526768538801115752}
   - component: {fileID: 740263412515095388}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: AllGo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1525,15 +1523,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8292e6befffaa6e46a0b32747f4c8cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionPlayProcess: {fileID: 0}
-  PreFrame: {fileID: 0}
-  PlayOrPause: {fileID: 0}
-  NextFrame: {fileID: 0}
-  PlaySprite: {fileID: 0}
-  PauseSprite: {fileID: 0}
-  PlaySpeedInputText: {fileID: 0}
-  FixPos: {fileID: 0}
-  AllGo: {fileID: 0}
+  ActionPlayProcess: {fileID: 1662544730536018069}
+  PreFrame: {fileID: 7116208131400302499}
+  PlayOrPause: {fileID: 6343450634865085105}
+  NextFrame: {fileID: 2395193637733674255}
+  PlaySprite: {fileID: 8025662677093319830}
+  PauseSprite: {fileID: 212905592044053946}
+  PlaySpeedInputText: {fileID: 2069711879059035395}
+  FixPos: {fileID: 4285725222616374040}
+  AllGo: {fileID: 740263412515095388}
   CurAnimationClip: {fileID: 0}
   CurGameObject: {fileID: 0}
   CurGameObjects: []
@@ -2054,7 +2052,7 @@ GameObject:
   - component: {fileID: 4358644736679554176}
   - component: {fileID: 9146068834341871780}
   - component: {fileID: 8232715018998719550}
-  - component: {fileID: 5520783832887908664}
+  - component: {fileID: 2395193637733674255}
   m_Layer: 5
   m_Name: NextFrame
   m_TagString: Untagged
@@ -2119,7 +2117,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5520783832887908664
+--- !u!114 &2395193637733674255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2128,7 +2126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6866952782309449569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af91097e152e4e4d9826406e4127259, type: 3}
+  m_Script: {fileID: 11500000, guid: 62e972975eabf5742955032cc5329d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -2165,10 +2163,9 @@ MonoBehaviour:
       m_Calls: []
   DoBaseTransition: 1
   uiAudioId: 0
-  soundId: Play_ui_no_sound
+  soundId: 
   glowBg: {fileID: 0}
   glowMat: {fileID: 0}
-  btnTitle: {fileID: 0}
 --- !u!1 &7625669441641769816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,7 +2256,7 @@ GameObject:
   - component: {fileID: 8208893489031967175}
   - component: {fileID: 4285725222616374040}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: FixPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

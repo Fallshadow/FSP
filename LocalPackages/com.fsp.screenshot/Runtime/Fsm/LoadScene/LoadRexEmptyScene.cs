@@ -24,7 +24,7 @@ namespace fsp.modelshot
 
         protected override void onLoading()
         {
-            LittleEnvironmentCreator.instance.SwitchToEnvironment("环境——斩裂刀");
+            
         }
 
         protected override void onLoadingEnd()

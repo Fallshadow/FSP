@@ -13,7 +13,8 @@
                 case ObjectStylingType.RexEditor_Fashion_Pendant_Library : return new ObjectStylingStrategyRexEditorPendant(info);
                 case ObjectStylingType.RexEditor_Fashion_Weapon_Library  : return new ObjectStylingStrategyRexEditorFashionWeapon(info);
                 case ObjectStylingType.RexEditor_Pet_Library             : return new ObjectStylingStrategyRexEditorPet(info);
-                case ObjectStylingType.Free_ScreenShot_Library           : return new ObjectStylingStrategyRexEditorPet(info);
+                case ObjectStylingType.Free_ScreenShot_Library           : return new ObjectStylingStrategyFreeScreenShot(info);
+                case ObjectStylingType.RexEditor_Monster_Library         : return new ObjectStylingStrategyRexEditorMonster(info);
                 default:
                 {
                     return null;

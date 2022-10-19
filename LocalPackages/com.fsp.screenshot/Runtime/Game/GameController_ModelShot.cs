@@ -25,7 +25,8 @@ namespace fsp.modelshot.Game
             FSM.AddState((int) ModelShotGameFsmState.REX_FGUAJIAN, new ModelShotRexFGuaJian());
             FSM.AddState((int) ModelShotGameFsmState.REX_FWEAPON, new ModelShotRexFWeapon());
             FSM.AddState((int) ModelShotGameFsmState.REX_PET, new ModelShotRexPet());
-            FSM.AddState((int) ModelShotGameFsmState.ENTRY_SELECT_MODEL, new ModelShotFreeSelect());
+            FSM.AddState((int) ModelShotGameFsmState.REX_MONSTER, new ModelShotRexMonster());
+            FSM.AddState((int) ModelShotGameFsmState.SELECT_MODEL, new ModelShotFreeSelect());
 
         }
 

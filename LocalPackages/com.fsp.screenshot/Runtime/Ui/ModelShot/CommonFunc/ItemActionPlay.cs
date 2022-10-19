@@ -26,15 +26,23 @@ namespace fsp.modelshot.ui
 
         public void Init()
         {
-            PreFrame.onClick.AddListener(PreFrameFunc);
-            PlayOrPause.onClick.AddListener(PlayOrPauseFunc);
-            NextFrame.onClick.AddListener(NextFrameFunc);
-            PlaySpeedInputText.onValueChanged.AddListener(SpeedChangeFunc);
+            PreFrame           .onClick.RemoveAllListeners();
+            PlayOrPause        .onClick.RemoveAllListeners();
+            NextFrame          .onClick.RemoveAllListeners();
+            PlaySpeedInputText .onValueChanged.RemoveAllListeners();
+            PreFrame           .onClick.AddListener(PreFrameFunc);
+            PlayOrPause        .onClick.AddListener(PlayOrPauseFunc);
+            NextFrame          .onClick.AddListener(NextFrameFunc);
+            PlaySpeedInputText .onValueChanged.AddListener(SpeedChangeFunc);
         }
 
         public void Init(SelectModelActionPanel parent)
         {
             this.parent = parent;
+            PreFrame           .onClick.RemoveAllListeners();
+            PlayOrPause        .onClick.RemoveAllListeners();
+            NextFrame          .onClick.RemoveAllListeners();
+            PlaySpeedInputText .onValueChanged.RemoveAllListeners();
             PreFrame.onClick.AddListener(PreFrameFunc);
             PlayOrPause.onClick.AddListener(PlayOrPauseFunc);
             NextFrame.onClick.AddListener(NextFrameFunc);

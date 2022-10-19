@@ -6,14 +6,15 @@ namespace fsp.ObjectStylingDesigne
     // 结构 root -> layer_0 和 所有layer_0的物体 -> layer_1 和 所有layer_1的物体……
     public class ObjectStylingStrategySkeleton
     {
+        public GameObject Root;
         private List<Transform> layerTranses = new List<Transform>();
         
         public void Init(int layerCount)
         {
             layerTranses.Clear();
             
-            GameObject root = new GameObject("ObjectStylingStrategySkeletonRoot");
-            layerTranses.Add(root.transform);
+            Root = new GameObject("ObjectStylingStrategySkeletonRoot");
+            layerTranses.Add(Root.transform);
             for (int index = 0; index < layerCount; index++)
             {
                 GameObject subLayerGO = new GameObject($"Layer_{index}");
@@ -35,6 +36,10 @@ namespace fsp.ObjectStylingDesigne
             }
             layerTranses.Clear();
         }
-        
+
+        public void RotateRootY(float y)
+        {
+            Root.transform.position = Root.transform.position.AddY(y);
+        }
     }
 }

@@ -11,6 +11,8 @@ namespace fsp.modelshot.ui
         public UiButton HideUi;
         public UiButton ScreenShot;
         public ChooseCameraToolPanel cameraPanel = null;
+        public SelectModelActionPanel ActionPanel = null;
+        public ChooseEnvironmentToolPanel EnvironmentToolPanel = null;
         public List<GameObject> HideUiGos = null;
         public string FileName = "New PNG";
         
@@ -20,6 +22,8 @@ namespace fsp.modelshot.ui
             HideUi.onClick.AddListener(HideUiGoFunc);
             ScreenShot.onClick.AddListener(CaptureScreenShot);
             cameraPanel?.Init();
+            ActionPanel?.InitPanel();
+            EnvironmentToolPanel?.Init();
         }
 
         public void Release()

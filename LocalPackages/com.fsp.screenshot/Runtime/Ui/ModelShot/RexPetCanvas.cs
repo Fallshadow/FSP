@@ -26,6 +26,7 @@ namespace fsp.modelshot.ui
         {
             base.Initialize();
             _rexEditorFashionPet = (ObjectStylingStrategyRexEditorPet) ObjectStylingDesigner.instance.CreateOrGetStrategy(ObjectStylingType.RexEditor_Pet_Library);
+            DragArea.OnDragHandler += _rexEditorFashionPet.RotateZeroTransY;
             initFashionPetGroup();
             initFashionPetGroupDatas();
         }
@@ -33,6 +34,7 @@ namespace fsp.modelshot.ui
         public override void Release()
         {
             base.Release();
+            DragArea.OnDragHandler -= _rexEditorFashionPet.RotateZeroTransY;
             ObjectStylingDesigner.instance.ReleaseStrategy(ObjectStylingType.RexEditor_Pet_Library);
         }
 
@@ -100,6 +102,11 @@ namespace fsp.modelshot.ui
         {
             _rexEditorFashionPet.ApplySubStrategy(0);
             _rexEditorFashionPet.LoadObject(data.FilePath);
+            string petId = data.FilterName.Substring(6, 5);
+            string petActionPath = Application.dataPath + $"/ResourceRex/Character/Pet/Mob_{petId}/Animations/Clips";
+            commonFuncMono.ActionPanel.ClearClips();
+            commonFuncMono.ActionPanel.LoadFolder(petActionPath);
+            commonFuncMono.ActionPanel.SetDisplayGO(_rexEditorFashionPet.Objects[0]);
             
             for (int numIndex = 0; numIndex < FashionPetGroupDatasItems.Count; numIndex++)
             {

@@ -65,9 +65,6 @@ namespace fsp.utility
             {
                 MonoObj.StopCoroutine(loading);
             }
-
-            loading = _loading();
-            MonoObj.StartCoroutine(loading);
         }
 
         private IEnumerator _loading()
@@ -80,10 +77,10 @@ namespace fsp.utility
 
             Utility.GcCollect();
             yield return null;
-
+            
+            SceneManager.LoadScene(scene_Name);
             onLoading();
-
-            SceneManager.LoadSceneAsync(scene_Name);
+            // SceneManager.LoadSceneAsync(scene_Name);
             yield return null;
 
             onLoadingEnd();

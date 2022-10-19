@@ -12,7 +12,8 @@ namespace fsp.modelshot.ui
         [Header("选择动作")] public ItemActionPlay ActionPlayProcess = null;
         public ClickSelectUiItem_Action DebugActionSelectItemPrefab = null;
         public Transform ActionSelectCellParent = null;
-
+        public GameObject actionPanel = null;
+        
         private UiItemList<AnimationClip, ClickSelectUiItem_Action> actionList = null;
         private List<AnimationClip> cClips = new List<AnimationClip>();
         private AnimationClip cCilp;
@@ -24,6 +25,14 @@ namespace fsp.modelshot.ui
         public void InitPanel(SelectModelCanvas parent)
         {
             this.parent = parent;
+            actionList = new UiItemList<AnimationClip, ClickSelectUiItem_Action>(DebugActionSelectItemPrefab, ActionSelectCellParent,
+                (uiItem) => { uiItem.ClickCallBack = clickAction; },
+                (index, data, uiItem) => { uiItem.SetActionInfo(index, data); });
+            ActionPlayProcess.Init(this);
+        }
+        
+        public void InitPanel()
+        {
             actionList = new UiItemList<AnimationClip, ClickSelectUiItem_Action>(DebugActionSelectItemPrefab, ActionSelectCellParent,
                 (uiItem) => { uiItem.ClickCallBack = clickAction; },
                 (index, data, uiItem) => { uiItem.SetActionInfo(index, data); });
@@ -44,19 +53,30 @@ namespace fsp.modelshot.ui
             string path = EditorUtility.OpenFolderPanel("选择动作文件夹", "", "");
             Debug.Log($"选择的文件夹 path {path}");
             cClips.Clear();
+            LoadFolder(path);
+        }
+
+        public void LoadFolder(string path)
+        {
             string[] actionMClipNames = Directory.GetFiles(path);
             AnimationClip anim;
             foreach (var mClipName in actionMClipNames)
             {
                 string assetPath = mClipName.Replace(Application.dataPath, "");
                 assetPath = "Assets" + assetPath;
-                anim = UnityEditor.AssetDatabase.LoadAssetAtPath<AnimationClip>(assetPath);
+                anim = AssetDatabase.LoadAssetAtPath<AnimationClip>(assetPath);
                 if (anim != null)
                 {
                     cClips.Add(anim);
                 }
             }
 
+            actionList.UpdateItems(cClips);
+        }
+
+        public void ClearClips()
+        {
+            cClips.Clear();
             actionList.UpdateItems(cClips);
         }
 
@@ -94,6 +114,11 @@ namespace fsp.modelshot.ui
 
             curActionClip = cCilp;
             ActionPlayProcess.ResetAcitonPlay(curActionClip, DisplayGO);
+        }
+
+        public void HideOrShowActionPanel()
+        {
+            actionPanel.SetActive(!actionPanel.activeSelf);
         }
     }
 }

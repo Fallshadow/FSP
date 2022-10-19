@@ -63,6 +63,25 @@ namespace fsp.ObjectStylingDesigne
             }
         }
 
+        public override void RotateZeroTransY(Vector2 rotate)
+        {
+            if (objectWorldInfos.Count == 0 || Objects.Count == 0) return;
+            
+            switch (curSubStategyIndex)
+            {
+                case 0: 
+                case 1: 
+                case 3: 
+                case 5: 
+                    Objects[0].transform.eulerAngles = Objects[0].transform.eulerAngles.AddY(rotate.x);
+                    break;
+                case 2: 
+                case 4: 
+                    osSkeleton.RotateRootY(rotate.x);
+                    break;
+            }
+        }
+
         public override void ApplySub2Strategy(int sub2StategyIndex)
         {
             

@@ -1,14 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using fsp.utility;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace fsp.ObjectStylingDesigne
 {
     public class ObjectStylingStrategyFreeScreenShot : ObjectStylingStrategyBase
     {
         public List<ObjectStringPath> ObjectNameList  = new List<ObjectStringPath>();
+        public Dictionary<ObjectStringPath, GameObject> DictObjects  = new Dictionary<ObjectStringPath, GameObject>();
         
         public ObjectStylingStrategyFreeScreenShot(ObjectStylingStrategyInfo info) : base(info)
         {
@@ -26,6 +29,34 @@ namespace fsp.ObjectStylingDesigne
 
         }
 
+        public void FakeLoadObject(string objectFilePath)
+        {
+            Object prefab0 = null;
+            objectFilePath = objectFilePath.Replace('\\', '/');
+            prefab0 = AssetDatabase.LoadAssetAtPath<Object>(objectFilePath);
+            if (prefab0 == null) return;
+            foreach (var objectStringPath in ObjectNameList)
+            {
+                if (string.Equals(objectStringPath.FilePath, objectFilePath, StringComparison.Ordinal))
+                {
+                    objectFilePath += "(Clone)";
+                }
+            }
+            ObjectNameList.Add(getObjectStringPath(objectFilePath));
+        }
+        
+        public void RealLoadObject(ObjectStringPath data)
+        {
+            Object prefab0 = null;
+            string file = data.FilePath.Replace("(Clone)", "");
+            prefab0 = AssetDatabase.LoadAssetAtPath<Object>(file);
+            if (objectWorldInfos == null || prefab0 == null) return;
+            GameObject go = Utility.InstantiateObject(prefab0, Vector3.zero, Quaternion.identity, null);
+            Objects.Add(go);
+            stylingObejcts();
+            DictObjects.Add(data, go);
+        }
+        
         public override void LoadObject(string objectFilePath)
         {
             Object prefab0 = null;
@@ -34,7 +65,6 @@ namespace fsp.ObjectStylingDesigne
             if (objectWorldInfos == null || prefab0 == null) return;
             Objects.Add(Utility.InstantiateObject(prefab0, Vector3.zero, Quaternion.identity, null));
             stylingObejcts();
-            ObjectNameList.Add(getObjectStringPath(objectFilePath));
         }
 
         public int GetObjectIndex(ObjectStringPath path)
@@ -52,15 +82,19 @@ namespace fsp.ObjectStylingDesigne
         
         public void DestoryObjectByData(ObjectStringPath data)
         {
-            DestoryObjectByIndex(GetObjectIndex(data));
-        }
-        
-        public void DestoryObjectByIndex(int index)
-        {
-            if (index >= Objects.Count || index <= 0) return;
-            Object prefab0 = Objects[index];
+            Object prefab0 = null;
+            foreach (var dictObject in DictObjects)
+            {
+                if (dictObject.Key.Equals(data))
+                {
+                    prefab0 = dictObject.Value;
+                    Objects.Remove(dictObject.Value);
+                    break;
+                }
+            }
             Object.DestroyImmediate(prefab0);
-            Objects.RemoveAt(index);
+            DictObjects.Remove(data);
+            ObjectNameList.Remove(data);
             stylingObejcts();
         }
 
@@ -71,13 +105,20 @@ namespace fsp.ObjectStylingDesigne
                 Object.DestroyImmediate(item);
             }
             Objects.Clear();
+            ObjectNameList.Clear();
+            DictObjects.Clear();
         }
 
         public GameObject GetObjectByData(ObjectStringPath data)
         {
-            int index = GetObjectIndex(data);
-            if (index >= Objects.Count || index <= 0) return null;
-            return Objects[index];
+            foreach (var dictObject in DictObjects)
+            {
+                if (dictObject.Key.Equals(data))
+                {
+                    return dictObject.Value;
+                }
+            }
+            return null;
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿using System.IO;
-using System.Linq;
 using fsp.modelshot.data;
-using Ludiq;
 using UnityEditor;
 using UnityEngine;
+using fsp.eutility;
 
 namespace fsp.modelshot.editor
 {
@@ -28,6 +27,13 @@ namespace fsp.modelshot.editor
                 addScenes[index] = new EditorBuildSettingsScene(files[index - nowScenes.Length].Replace($"{Application.dataPath}/../",""), true);
             }
             EditorBuildSettings.scenes = addScenes;
+        }
+        
+        
+        [MenuItem("ModelShot/4：打开截图场景", false, 5)]
+        public static void OpenModelShotScene()
+        {
+            EUtility.OpenScenee($"{ResourcesPathSetting.Sample_FOLDER}ModelShot.unity");
         }
     }
 }

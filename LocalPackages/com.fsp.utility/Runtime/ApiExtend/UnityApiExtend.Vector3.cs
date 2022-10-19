@@ -18,6 +18,21 @@ namespace fsp
         {
             return new Vector3(vec.x, vec.y, z);
         }
+        
+        public static Vector3 AddX(this Vector3 vec, float x)
+        {
+            return new Vector3(vec.x + x, vec.y, vec.z);
+        }
+
+        public static Vector3 AddY(this Vector3 vec, float y)
+        {
+            return new Vector3(vec.x, vec.y + y, vec.z);
+        }
+
+        public static Vector3 AddZ(this Vector3 vec, float z)
+        {
+            return new Vector3(vec.x, vec.y, vec.z + z);
+        }
 
         public static Vector3 Multiply(this Vector3 vec, float x, float y, float z)
         {

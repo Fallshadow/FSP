@@ -362,7 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777e8f37297b3c8458f79dd7c4e75b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
+  buttons:
+  - {fileID: 3201353827029373635}
   images:
   - {fileID: 220368196025036501}
   texts:
@@ -752,7 +753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777e8f37297b3c8458f79dd7c4e75b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
+  buttons:
+  - {fileID: 1165389394404186041}
   images:
   - {fileID: 2320990724241301084}
   texts:

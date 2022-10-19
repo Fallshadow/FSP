@@ -31,7 +31,7 @@ namespace fsp.modelshot.ui
                 modelRoot,
                 item =>
                 {
-                    item.AppearCurIndex += deleteCurIndex;
+                    item.DeleteCurIndex += deleteCurIndex;
                     item.SelectCurIndex += selectCurIndex;
                     item.AppearCurIndex += appearCurIndex;
                     item.DisAppearCurIndex += disAppearCurIndex;
@@ -49,11 +49,15 @@ namespace fsp.modelshot.ui
             modelItems.UpdateItems(_freeScreenShot.ObjectNameList);
         }
 
-        private void selectCurIndex(ObjectStringPath path)
+        private void selectCurIndex(ObjectStringPath path,int index)
         {
             GameObject go = _freeScreenShot.GetObjectByData(path);
             if (go == null) return;
             selectCallBackGO?.Invoke(go);
+            for (int numIndex = 0; numIndex < modelItems.Count; numIndex++)
+            {
+                modelItems[numIndex].ShowApply(index);
+            }
         }
 
         private void disAppearCurIndex(ObjectStringPath path)
@@ -63,17 +67,17 @@ namespace fsp.modelshot.ui
         
         private void appearCurIndex(ObjectStringPath path)
         {
-            _freeScreenShot.LoadObject(path.FilePath);
+            _freeScreenShot.RealLoadObject(path);
         }
 
         public void ChooseFileAndInit()
         {
-            string[] type = {"FBX", "fbx", "Prefab", "prefab"};
+            string[] type = {"Prefab", "prefab", "FBX", "fbx"};
             string filePath = EditorUtility.OpenFilePanelWithFilters("选择模型预制体", "", type);
             filePath = filePath.Replace(Application.dataPath, "");
             filePath = "Assets" + filePath;
             
-            _freeScreenShot.LoadObject(filePath);
+            _freeScreenShot.FakeLoadObject(filePath);
             modelItems.UpdateItems(_freeScreenShot.ObjectNameList);
         }
 
@@ -87,10 +91,15 @@ namespace fsp.modelshot.ui
                 string filePath = mClipName.Replace(Application.dataPath, "");
                 filePath = "Assets" + filePath;
                 
-                _freeScreenShot.LoadObject(filePath);
+                _freeScreenShot.FakeLoadObject(filePath);
             }
 
             modelItems.UpdateItems(_freeScreenShot.ObjectNameList);
+        }
+
+        public void Release()
+        {
+            _freeScreenShot.DestoryAllObjects();
         }
     }
 }

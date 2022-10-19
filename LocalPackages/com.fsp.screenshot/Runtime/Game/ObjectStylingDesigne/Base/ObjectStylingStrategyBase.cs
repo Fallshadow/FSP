@@ -40,6 +40,12 @@ namespace fsp.ObjectStylingDesigne
             osSkeleton.Init(curInfo.MaxLayer);
         }
 
+        public virtual void RotateZeroTransY(Vector2 rotate)
+        {
+            if (objectWorldInfos.Count == 0 || Objects.Count == 0) return;
+            Objects[0].transform.eulerAngles = Objects[0].transform.eulerAngles.AddY(rotate.x);
+        }
+
         public virtual void Release()
         {
             osSkeleton.Release();

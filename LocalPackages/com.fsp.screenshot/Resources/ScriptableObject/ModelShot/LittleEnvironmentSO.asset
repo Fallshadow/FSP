@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: LittleEnvironmentSO
   m_EditorClassIdentifier: 
   littleEnvironmentInfos:
+  - environmentName: "\u73AF\u5883\u2014\u2014\u57FA\u7840"
+    environmentPath: Environment\PhotoStudio\BasePhotoStudio
   - environmentName: "\u73AF\u5883\u2014\u2014\u65A9\u88C2\u5200"
     environmentPath: Environment\PhotoStudio\PhotoStudio_Knife
   - environmentName: "\u73AF\u5883\u2014\u2014\u9524\u5B50"
@@ -31,3 +33,5 @@ MonoBehaviour:
     environmentPath: Environment\PhotoStudio\PhotoStudio_GuaJian
   - environmentName: "\u73AF\u5883\u2014\u2014\u5BA0\u7269"
     environmentPath: Environment\PhotoStudio\PhotoStudio_Pet
+  - environmentName: "\u73AF\u5883\u2014\u2014\u602A\u7269"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_Monster

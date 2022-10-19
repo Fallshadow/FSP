@@ -11,5 +11,6 @@
         RexFashionWeaponCanvas = 6,
         RexPetCanvas = 7,
         RexSuitCanvas = 8,
+        RexMonsterCanvas = 9,
     }
 }

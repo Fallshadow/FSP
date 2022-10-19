@@ -11,7 +11,7 @@
         REX_FGUAJIAN,
         REX_FWEAPON,
         REX_PET,
-        LOAD_SELECT_MODEL, 
-        ENTRY_SELECT_MODEL,
+        REX_MONSTER,
+        SELECT_MODEL,
     }
 }

@@ -26,6 +26,7 @@ namespace fsp.modelshot.ui
         {
             base.Initialize();
             _rexEditorEquipment = (ObjectStylingStrategyRexEditorEquipment) ObjectStylingDesigner.instance.CreateOrGetStrategy(ObjectStylingType.RexEditor_Equipment_Library);
+            DragArea.OnDragHandler += _rexEditorEquipment.RotateZeroTransY;
             initEquipmentGroup();
             initEquipmentGroupDatas();
         }
@@ -33,6 +34,7 @@ namespace fsp.modelshot.ui
         public override void Release()
         {
             base.Release();
+            DragArea.OnDragHandler -= _rexEditorEquipment.RotateZeroTransY;
             ObjectStylingDesigner.instance.ReleaseStrategy(ObjectStylingType.RexEditor_Equipment_Library);
         }
 

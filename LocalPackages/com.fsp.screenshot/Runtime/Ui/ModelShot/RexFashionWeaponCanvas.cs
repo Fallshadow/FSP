@@ -26,6 +26,7 @@ namespace fsp.modelshot.ui
         {
             base.Initialize();
             _rexEditorFashionWeapon = (ObjectStylingStrategyRexEditorFashionWeapon)ObjectStylingDesigner.instance.CreateOrGetStrategy(ObjectStylingType.RexEditor_Fashion_Weapon_Library);
+            DragArea.OnDragHandler += _rexEditorFashionWeapon.RotateZeroTransY;
             initFashionWeaponGroup();
             initFashionWeaponGroupDatas();
         }
@@ -33,6 +34,7 @@ namespace fsp.modelshot.ui
         public override void Release()
         {
             base.Release();
+            DragArea.OnDragHandler -= _rexEditorFashionWeapon.RotateZeroTransY;
             ObjectStylingDesigner.instance.ReleaseStrategy(ObjectStylingType.RexEditor_Fashion_Weapon_Library);
         }
 

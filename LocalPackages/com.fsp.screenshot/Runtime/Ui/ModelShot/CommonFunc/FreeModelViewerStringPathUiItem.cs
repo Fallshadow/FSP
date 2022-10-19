@@ -7,7 +7,7 @@ namespace fsp.modelshot.ui
     public class FreeModelViewerStringPathUiItem : ModelViewerStringPathUiItem
     {
         public Toggle appearToggle;
-        public Action<ObjectStringPath> SelectCurIndex;
+        public Action<ObjectStringPath, int> SelectCurIndex;
         public Action<ObjectStringPath> DeleteCurIndex;
         public Action<ObjectStringPath> AppearCurIndex;
         public Action<ObjectStringPath> DisAppearCurIndex;
@@ -21,7 +21,10 @@ namespace fsp.modelshot.ui
             GetButton(0).onClick.RemoveAllListeners();
             GetButton(1).onClick.RemoveAllListeners();
             appearToggle.onValueChanged.RemoveAllListeners();
-            GetButton(0).onClick.AddListener(() => { SelectCurIndex?.Invoke(Data); });
+            GetButton(0).onClick.AddListener(() =>
+            {
+                SelectCurIndex?.Invoke(Data, Index);
+            });
             GetButton(1).onClick.AddListener(() => { DeleteCurIndex?.Invoke(Data); });
             appearToggle.onValueChanged.AddListener((bool isAppear) => {
                 if (isAppear) AppearCurIndex?.Invoke(Data);

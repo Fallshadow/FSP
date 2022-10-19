@@ -10,5 +10,6 @@
         RexEditor_Fashion_Weapon_Library = 5,           // RexDebug下项目时装武器库策略
         RexEditor_Pet_Library = 6,                      // RexDebug下项目宠物库策略
         Free_ScreenShot_Library = 7,                    // 自由选择模型截图
+        RexEditor_Monster_Library = 8,                  // RexDebug下项目怪物库策略
     }
 }
