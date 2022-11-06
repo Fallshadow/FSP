@@ -8,10 +8,10 @@ namespace fsp.data
     [CreateAssetMenu]
     public class SerializeDictTestSO : ScriptableObject, ISerializationCallbackReceiver
     {
-        Dictionary<int,int> MainLayerFsmControDic = new Dictionary<int,int>();
+        Dictionary<int, int> MainLayerFsmControDic = new Dictionary<int, int>();
         [SerializeField] [HideInInspector] private List<int> keys0 = new List<int>();
         [SerializeField] [HideInInspector] private List<int> values0 = new List<int>();
-        
+
         public void OnBeforeSerialize()
         {
             // 需要注意的是字典序列化的官方实例写法不完全正确
@@ -32,7 +32,7 @@ namespace fsp.data
 
             for (int i = 0; i != Math.Min(keys0.Count, values0.Count); i++)
                 MainLayerFsmControDic.Add(keys0[i], values0[i]);
-            if(MainLayerFsmControDic.Count == 0)MainLayerFsmControDic.Add(1, 1);
+            if (MainLayerFsmControDic.Count == 0) MainLayerFsmControDic.Add(1, 1);
             Debug.Log("OnAfterDeserialize");
         }
     }
