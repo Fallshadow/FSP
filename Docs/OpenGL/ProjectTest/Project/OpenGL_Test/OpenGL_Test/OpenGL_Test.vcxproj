@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Administrator\Desktop\FSP\Docs\OpenGL\ProjectTest\glfw3_package\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Administrator\Desktop\FSP\Docs\OpenGL\ProjectTest\glfw3_package\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\FSP\Docs\OpenGL\ProjectTest\glfw3_package\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\FSP\Docs\OpenGL\ProjectTest\glfw3_package\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -109,7 +109,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>C:\Users\Administrator\Desktop\FSP\Docs\OpenGL\ProjectTest\glfw3_package\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\FSP\Docs\OpenGL\ProjectTest\glfw3_package\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

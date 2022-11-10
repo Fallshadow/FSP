@@ -1,1 +1,2 @@
 C:\Users\Administrator\Desktop\FSP\Docs\OpenGL\ProjectTest\Project\OpenGL_Test\OpenGL_Test\x64\Debug\OpenGL_Test.exe
+D:\FSP\Docs\OpenGL\ProjectTest\Project\OpenGL_Test\OpenGL_Test\x64\Debug\OpenGL_Test.exe
