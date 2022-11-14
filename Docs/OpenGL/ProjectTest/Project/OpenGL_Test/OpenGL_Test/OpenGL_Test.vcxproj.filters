@@ -22,4 +22,23 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vertex_DoNothing.Shader">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Fragment_DoNothing.Shader">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Vertex_0P1C_OutColor.Shader">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Fragment_InColor.Shader">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
 </Project>

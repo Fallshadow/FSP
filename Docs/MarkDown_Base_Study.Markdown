@@ -51,22 +51,28 @@ Markdown 是纯文本可移植的。几乎可以使用任何应用程序打开�
   "age": 25
 }
 ```
+代码折叠
+details：折叠语法标签
+summary：折叠语法展示的摘要
+<details>
+<summary>点击时的区域标题</summary>
 
 ```C#
-Class B
-{
-    public B(){}
-    public const int Config = 0;
-}
+    Class B
+    {
+        public B(){}
+        public const int Config = 0;
+    }
 
-Class A
-{
-    int a = 10;
-    B b = new B();
-}
-
-
+    Class A
+    {
+        int a = 10;
+        B b = new B();
+    }
 ```
+</details>
+
+
 
 ![旋转矩阵](/Docs/Games101/MD_PNG/旋转矩阵.png)
 
