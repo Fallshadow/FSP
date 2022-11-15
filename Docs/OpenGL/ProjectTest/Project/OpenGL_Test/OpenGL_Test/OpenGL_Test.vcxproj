@@ -139,12 +139,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Fragment_InColor.Shader" />
+    <None Include="Fragment_InCT.Shader" />
+    <None Include="Fragment_InCT_MixTime.Shader" />
+    <None Include="Fragment_UniformColor.Shader" />
+    <None Include="Vertex_0P1C2T_OutColorAndTexture.Shader" />
     <None Include="Vertex_0P1C_OutColor.Shader" />
     <None Include="Vertex_DoNothing.Shader" />
     <None Include="Fragment_DoNothing.Shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="wall.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

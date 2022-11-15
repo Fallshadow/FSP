@@ -133,6 +133,9 @@ glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
 glCompileShader(fragmentShader);
 ```
 
+![VAO结构](../images/20d66636351f746bbc7571f7099be61708dba7fc56bbc0b5d3c0ec2b5ad1c55a.png)  
+
+
 
 # 创建并使用着色器程序
 着色器程序对象，Shader Program Object，是多个着色器合并之后并最终链接完成的版本。其中的所有着色器需要在编译之后链接成为一个着色器程序对象，然后在渲染时激活它，激活之后的程序我们就可以在发送渲染调用时使用。

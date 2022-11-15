@@ -26,6 +26,9 @@
     <ClInclude Include="Shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Vertex_DoNothing.Shader">
@@ -40,5 +43,22 @@
     <None Include="Fragment_InColor.Shader">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="Fragment_UniformColor.Shader">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Vertex_0P1C2T_OutColorAndTexture.Shader">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Fragment_InCT_MixTime.Shader">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Fragment_InCT.Shader">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="wall.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

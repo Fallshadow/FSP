@@ -24,4 +24,62 @@ GLAD用于解决OpenGL函数调用的问题。OpenGL由于驱动版本过多，�
 
 
 ### 第三课
-#### 
+#### 1：翻译翻译图形渲染管线？渲染管线可以划分为的几个步骤？
+将一系列3D坐标转换为2D像素的过程。  
+从数据层面简单拆分为两步：3D坐标到2D坐标，2D坐标到2D像素。  
+从OpenGL管线来说：输入顶点数据 到 顶点着色器 到 图元装配 到 几何着色器 到 光栅化 到 片段着色器 到 测试与混合
+#### 2：3D坐标、2D坐标、2D像素？
+#### 3：典型的着色器代码结构？
+``` C++
+#version version_number
+in type in_type_name
+out type out_type_name
+uniform type uniform_type_name
+void main()
+{
+    // 自定义操作变量
+    // 最终输出
+    out_type_name = xxxxxxx;
+}
+```
+#### 4：顶点着色器的数据来源？
+直接来源于顶点数据，使用layout(position = 0)之类的修饰去寻找指定属性解析
+#### 5：顶点属性最大值由什么决定？
+由硬件决定，我们可以使用这个函数查看最大值
+``` C++
+int nrAttributes;
+glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
+```
+一般我们会得到16 这个基本够用了
+#### 6：GLSL的数据类型和容器？
+vecn,bvecn,ivecn,uvecn,dvecn
+Vector Matrix
+#### 7：向量的特质？
+重组：Swizzling。即向量允许这样的写法
+```C++
+vec2 myVec2;
+vec3 myVec3;
+vec4 myVec4 = myVec2.yy + myVec3.zx;
+myVec4 = myVec3.zzzx;
+myVec4 = myVec2.xxyy;
+```
+#### 8：着色器之间的信息传递？
+需要同名同类型的In 和 Out相连。
+#### 9：uniform是什么？怎么用？使用时需要注意什么？
+uniform 是一个声明在Shader里的全局变量。所有Shader都共享这份名称的uniform。  
+glGetUniformLocation从指定程序中获取到指定名称的uniform。
+glUniformXT赋值给指定uniform（X为几位，T为什么类型，比如uniform vec4 Uniform_Color为4位float，即4f）
+#### 10：怎么理解VAO,VBO,EBO?使用上的注意事项？
+首先，VBO是顶点缓冲对象，它保存着我们传入的顶点数据，保存在显存上。一般来说这份数据是float数组，OpenGL并不知道该如何解析他们，VAO就是用来解释数据的，称为顶点数组对象。为了避免浪费空间，我们引入了EBO，元素缓冲对象（别名IBO 索引缓冲对象）EBO指定构成几何图元的顶点顺序。  
+使用上，我们需要先生成以上三类，然后先绑定指定的VAO，然后再将对应的VBO，EBO绑定到VAO上。然后我们可以继续绑定其他VAO，再将对应的VBO，EBO绑定到VAO。  
+最后，我们在渲染时，一样先选择心仪的VAO进行绑定，然后可以用VAO画也可以用EBO画，但是不可以用VBO画，VBO纯纯是数据。（追本溯源还是用VAO画的）
+#### 11：标准化设备坐标？
+#### 12：如何创建并使用一个着色器程序？
+编译顶点着色器，编译片段着色器，链接它们到程序，然后释放它们，最后使用链接好的程序。
+
+### 第四课
+#### 1：纹理的好处？
+#### 2：如何导入一个图像？
+#### 3：什么叫做采样？
+#### 4：纹理坐标的范围？超出范围会怎样？
