@@ -55,9 +55,15 @@
     <None Include="Fragment_InCT.Shader">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="Fragment_InCT_MixTexture.Shader">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="wall.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="awesomeface.png">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

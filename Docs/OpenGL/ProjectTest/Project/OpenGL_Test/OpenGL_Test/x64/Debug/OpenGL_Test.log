@@ -1,5 +1,4 @@
 ﻿  MainTest.cpp
-D:\FSP\Docs\OpenGL\ProjectTest\Project\OpenGL_Test\OpenGL_Test\MainTest.cpp(98,19): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
 glfw3.lib(init.obj) : warning LNK4099: 未找到 PDB“glfw3.pdb”(使用“glfw3.lib(init.obj)”或在“D:\FSP\Docs\OpenGL\ProjectTest\Project\OpenGL_Test\x64\Debug\glfw3.pdb”中寻找)；正在链接对象，如同没有调试信息一样
 glfw3.lib(window.obj) : warning LNK4099: 未找到 PDB“glfw3.pdb”(使用“glfw3.lib(window.obj)”或在“D:\FSP\Docs\OpenGL\ProjectTest\Project\OpenGL_Test\x64\Debug\glfw3.pdb”中寻找)；正在链接对象，如同没有调试信息一样
 glfw3.lib(input.obj) : warning LNK4099: 未找到 PDB“glfw3.pdb”(使用“glfw3.lib(input.obj)”或在“D:\FSP\Docs\OpenGL\ProjectTest\Project\OpenGL_Test\x64\Debug\glfw3.pdb”中寻找)；正在链接对象，如同没有调试信息一样
