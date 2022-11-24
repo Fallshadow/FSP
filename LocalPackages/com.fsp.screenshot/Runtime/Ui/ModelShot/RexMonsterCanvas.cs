@@ -100,7 +100,8 @@ namespace fsp.modelshot.ui
         {
             _rexEditorFashionMonster.ApplySubStrategy(0);
             _rexEditorFashionMonster.LoadObject(data.FilePath);
-            string MonsterId = data.FilterName.Substring(6, data.FilterName.Length - 6 - 7);
+            int _index = data.FilterName.IndexOf('_') + 1;
+            string MonsterId = data.FilterName.Substring(_index, data.FilterName.Length - _index - 7);
             string MonsterActionPath = "";
             if (data.FilePath.Contains("Boss"))
             {

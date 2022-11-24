@@ -10,7 +10,7 @@ namespace fsp.modelshot.ui
         public override void Initialize()
         {
             base.Initialize();
-            commonFuncMono?.Initialize();
+            commonFuncMono?.Initialize(this);
         }
 
         public override void Release()

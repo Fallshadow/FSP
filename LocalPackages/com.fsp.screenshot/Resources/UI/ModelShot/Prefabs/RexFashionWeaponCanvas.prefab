@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 7064081292618927072}
   - component: {fileID: 8821138716006584486}
   - component: {fileID: 5345910018329105693}
+  - component: {fileID: 1404988934981325443}
   m_Layer: 5
   m_Name: RexFashionWeaponCanvas
   m_TagString: Untagged
@@ -133,6 +134,18 @@ MonoBehaviour:
   FashionWeaponGroupPrefab: {fileID: 1219061692229062987}
   FashionWeaponGroupDatasRoot: {fileID: 3983664538174795529}
   FashionWeaponGroupDatasPrefab: {fileID: 2363365505476447124}
+--- !u!225 &1404988934981325443
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788712076844432081}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &3215415798177167280
 PrefabInstance:
   m_ObjectHideFlags: 0

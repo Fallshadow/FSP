@@ -1447,6 +1447,7 @@ GameObject:
   - component: {fileID: 1713808727629095252}
   - component: {fileID: 1364890741393797667}
   - component: {fileID: 520935874645699736}
+  - component: {fileID: -8303765379890043806}
   m_Layer: 5
   m_Name: DebugCanvas
   m_TagString: Untagged
@@ -1533,6 +1534,18 @@ MonoBehaviour:
   Rex_Pet_Btn: {fileID: 3983811375872015581}
   Rex_Monster_Btn: {fileID: 6219164830227931206}
   Free_Btn: {fileID: 4723321988947077508}
+--- !u!225 &-8303765379890043806
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350611731040101283}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6158147749432312679
 GameObject:
   m_ObjectHideFlags: 0

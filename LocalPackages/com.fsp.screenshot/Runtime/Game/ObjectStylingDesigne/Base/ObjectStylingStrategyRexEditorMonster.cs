@@ -30,7 +30,7 @@ namespace fsp.ObjectStylingDesigne
             string[] mobBossDirectories = Directory.GetDirectories(curInfo.ResourceFolderAssetsPath + "/Boss");
             foreach (var mobDirectory in mobBossDirectories)
             {
-                addMonster(mobDirectory, 4, ObjectNameList_0_Boss);
+                addBossMonster(mobDirectory, 4, ObjectNameList_0_Boss);
             }
 
             string[] mobNpcDirectories = Directory.GetDirectories(curInfo.ResourceFolderAssetsPath + "/NPC_Monster");
@@ -44,6 +44,16 @@ namespace fsp.ObjectStylingDesigne
         {
             string subFileSuffix = mobDirectory.Substring(mobDirectory.Length - length);
             string filePath = mobDirectory + $"/Prefabs/Model_{subFileSuffix}.prefab";
+            filePath = filePath.Replace('\\', '/');
+            if (!File.Exists(filePath)) return;
+            ObjectStringPath objectStringPath = getObjectStringPath(filePath);
+            listPath.Add(objectStringPath);
+        }
+        
+        private void addBossMonster(string mobDirectory, int length, List<ObjectStringPath> listPath)
+        {
+            string subFileSuffix = mobDirectory.Substring(mobDirectory.Length - length);
+            string filePath = mobDirectory + $"/Prefabs/MixMonster_{subFileSuffix}.prefab";
             filePath = filePath.Replace('\\', '/');
             if (!File.Exists(filePath)) return;
             ObjectStringPath objectStringPath = getObjectStringPath(filePath);

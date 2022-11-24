@@ -39,7 +39,7 @@ namespace fsp.ObjectStylingDesigne
 
         public void RotateRootY(float y)
         {
-            Root.transform.position = Root.transform.position.AddY(y);
+            Root.transform.eulerAngles = Root.transform.eulerAngles.AddY(y);
         }
     }
 }

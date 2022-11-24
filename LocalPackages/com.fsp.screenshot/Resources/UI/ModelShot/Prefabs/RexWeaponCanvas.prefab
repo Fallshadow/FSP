@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 7064081292618927072}
   - component: {fileID: 8821138716006584486}
   - component: {fileID: 1904888127613894414}
+  - component: {fileID: -7723399858277707901}
   m_Layer: 5
   m_Name: RexWeaponCanvas
   m_TagString: Untagged
@@ -133,6 +134,18 @@ MonoBehaviour:
   weaponGroupPrefab: {fileID: 5528697677542959961}
   weaponGroupDatasRoot: {fileID: 7717985390373279003}
   weaponGroupDatasPrefab: {fileID: 8979974794744557958}
+--- !u!225 &-7723399858277707901
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788712076844432081}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &357347408510988694
 PrefabInstance:
   m_ObjectHideFlags: 0

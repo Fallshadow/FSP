@@ -1,23 +1,28 @@
 ﻿using System.Collections.Generic;
 using fsp.modelshot.Game;
 using fsp.ui.utility;
+using Ludiq;
 using UnityEngine;
 
 namespace fsp.modelshot.ui
 {
     public class CommonFuncMono : MonoBehaviour
     {
+        private MonoBehaviour parent;
         public UiButton BackToMenu;
         public UiButton HideUi;
         public UiButton ScreenShot;
         public ChooseCameraToolPanel cameraPanel = null;
         public SelectModelActionPanel ActionPanel = null;
         public ChooseEnvironmentToolPanel EnvironmentToolPanel = null;
-        public List<GameObject> HideUiGos = null;
+
+        public CanvasGroup parentCanvasGroup => parent.GetOrAddComponent<CanvasGroup>();
+        private bool cacheAlphaSwitch = true;
         public string FileName = "New PNG";
         
-        public void Initialize()
+        public void Initialize(MonoBehaviour parentP)
         {
+            parent = parentP;
             BackToMenu.onClick.AddListener(OpenDebugCanvas);
             HideUi.onClick.AddListener(HideUiGoFunc);
             ScreenShot.onClick.AddListener(CaptureScreenShot);
@@ -40,10 +45,8 @@ namespace fsp.modelshot.ui
         
         public void HideUiGoFunc()
         {
-            foreach (var HideUiGo in HideUiGos)
-            {
-                HideUiGo.SetActive(!HideUiGo.activeSelf);
-            }
+            parentCanvasGroup.alpha = cacheAlphaSwitch ? 1 : 0;
+            cacheAlphaSwitch = !cacheAlphaSwitch;
         }
         
         public void CaptureScreenShot()
