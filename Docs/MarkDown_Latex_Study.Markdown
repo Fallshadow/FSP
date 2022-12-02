@@ -1,3 +1,4 @@
+[CSDN上的优质合集](https://blog.csdn.net/Jinyindao243052/article/details/125386511)
 ## 空格
 (1) # 正常的输入，是没有空格的。  
 $Embrace the glorious mess that you are.$
@@ -27,3 +28,10 @@ $Embrace\qquad the\qquad glorious\qquad mess\qquad that\qquad you\quad are.$
 | 属于         | $x\in X$           |
 | 右下序号小标 | $x_1$              |
 | 箭头         | $f:X\rightarrow Y$ |
+
+
+
+## 数学表达式
+|          |                |
+| ------------ | ------------------ |
+| 矩阵         | $x\in X$           |

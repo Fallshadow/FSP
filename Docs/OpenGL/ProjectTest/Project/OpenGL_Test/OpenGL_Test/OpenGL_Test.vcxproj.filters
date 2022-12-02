@@ -58,6 +58,9 @@
     <None Include="Fragment_InCT_MixTexture.Shader">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="Vertex_0P1C2T_Transform.shader">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="wall.jpg">

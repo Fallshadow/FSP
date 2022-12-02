@@ -148,6 +148,7 @@
     <None Include="Fragment_InCT_MixTime.Shader" />
     <None Include="Fragment_UniformColor.Shader" />
     <None Include="Vertex_0P1C2T_OutColorAndTexture.Shader" />
+    <None Include="Vertex_0P1C2T_Transform.shader" />
     <None Include="Vertex_0P1C_OutColor.Shader" />
     <None Include="Vertex_DoNothing.Shader" />
     <None Include="Fragment_DoNothing.Shader" />
