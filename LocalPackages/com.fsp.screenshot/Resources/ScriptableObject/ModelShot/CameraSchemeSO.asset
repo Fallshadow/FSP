@@ -42,8 +42,8 @@ MonoBehaviour:
     SpeedValue: 2
     OrthoMode: 0
   - Name: "\u9ED8\u8BA4\u5851\u80FD\u67AA"
-    XValue: -0.01647997
-    YValue: -0.07142539
+    XValue: -0.147295
+    YValue: 0.1424252
     ZValue: 1.4
     FOVValue: 60
     SpeedValue: 2
@@ -66,6 +66,20 @@ MonoBehaviour:
     XValue: 0
     YValue: 0
     ZValue: 4.599999
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0
+  - Name: "\u65B0\u7684\u76F8\u673A"
+    XValue: -0.9962436
+    YValue: -0.2231444
+    ZValue: 3
+    FOVValue: 60
+    SpeedValue: 2
+    OrthoMode: 0
+  - Name: "\u602A\u7269\u76F8\u673A"
+    XValue: -0.9820552
+    YValue: 2.188373
+    ZValue: 9.5
     FOVValue: 60
     SpeedValue: 2
     OrthoMode: 0

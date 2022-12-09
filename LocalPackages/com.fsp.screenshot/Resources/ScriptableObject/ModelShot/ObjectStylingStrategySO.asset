@@ -29,7 +29,7 @@ MonoBehaviour:
     MaxLayer: 1
   - IdType: 3
     CreatePlanName: "RexDebug\u4E0B\u9879\u76EE\u5957\u88C5\u5E93\u7B56\u7565"
-    ResourceFolderAssetsPath: 
+    ResourceFolderAssetsPath: Assets\ResourceRex\Character\Humman
     FileSuffixStrings: []
     Postion: {x: 0, y: 0, z: 0}
     MaxLayer: 1

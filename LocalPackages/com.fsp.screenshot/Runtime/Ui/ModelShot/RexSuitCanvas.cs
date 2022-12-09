@@ -86,6 +86,8 @@ namespace fsp.modelshot.ui
             // 显示group下的所有物件按钮
             switch (index)
             {
+                case 0: SuitGroupDatasItems.UpdateItems(_rexEditorSuit.ObjectNameList_0_Male  );break;
+                case 1: SuitGroupDatasItems.UpdateItems(_rexEditorSuit.ObjectNameList_1_FeMale);break;
             }
             SuitGroupDatasRoot.SetSiblingIndex(index + 2);
             

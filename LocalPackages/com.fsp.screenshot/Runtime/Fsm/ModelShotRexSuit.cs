@@ -10,7 +10,7 @@ namespace fsp.modelshot
     {
         public override void Enter()
         {
-            LittleEnvironmentCreator.instance.SwitchToEnvironment("环境——斩裂刀");
+            LittleEnvironmentCreator.instance.SwitchToEnvironment("环境——时装套装");
             TimeManager.instance.AddCountDownTimer(false, "Load", 1, 
                 () => { UiManager.instance.OpenUi<RexSuitCanvas>(); });
         }

@@ -35,3 +35,5 @@ MonoBehaviour:
     environmentPath: Environment\PhotoStudio\PhotoStudio_Pet
   - environmentName: "\u73AF\u5883\u2014\u2014\u602A\u7269"
     environmentPath: Environment\PhotoStudio\PhotoStudio_Monster
+  - environmentName: "\u73AF\u5883\u2014\u2014\u65F6\u88C5\u5957\u88C5"
+    environmentPath: Environment\PhotoStudio\PhotoStudio_Suit

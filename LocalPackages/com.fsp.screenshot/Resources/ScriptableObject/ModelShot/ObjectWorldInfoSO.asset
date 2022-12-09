@@ -121,3 +121,15 @@ MonoBehaviour:
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+  - WorldInfoName: "\u4EBA\u5F62\u65B9\u6848"
+    CInfos:
+    - Position: {x: 0, y: -0.8, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+      SkeletonLayer: 0
+  - WorldInfoName: "\u602A\u7269\u65B9\u6848"
+    CInfos:
+    - Position: {x: 0, y: -1, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 1, y: 1, z: 1}
+      SkeletonLayer: 0

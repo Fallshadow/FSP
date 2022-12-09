@@ -63,7 +63,7 @@ namespace fsp.ObjectStylingDesigne
         public override void ApplySubStrategy(int subStategyIndex)
         {
             curSubStategyIndex = subStategyIndex;
-            objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("默认方案");
+            objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("怪物方案");
         }
 
         public override void ApplySub2Strategy(int sub2StategyIndex)

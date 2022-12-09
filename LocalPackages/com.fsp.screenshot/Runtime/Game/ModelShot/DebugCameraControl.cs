@@ -10,9 +10,8 @@ namespace fsp.modelshot
     public class DebugCameraControl : SingletonMonoBehaviorNoDestroy<DebugCameraControl>
     {
         [Header("配置项")] public float ViewCameraSpeed = 2f;
-        public GraphicsFormat MyGraphicsFormat = GraphicsFormat.R16G16B16_UInt;
+        public RenderTextureFormat RTFormat = RenderTextureFormat.ARGB32;
         public TextureFormat MyTextureFormat = TextureFormat.ARGB32;
-        public DefaultFormat MyDefaultFormat = DefaultFormat.HDR;
         [Header("观察项")] 
         public Camera ViewCamera = null;
         public bool isMove = false;
@@ -105,7 +104,7 @@ namespace fsp.modelshot
             ViewCamera.allowHDR = false;
             int width = Screen.width, height = Screen.height;
             // Screen.SetResolution(width,height,FullScreenMode.Windowed);
-            RenderTexture rt = new RenderTexture(4000, 2000, 24, MyGraphicsFormat);
+            RenderTexture rt = new RenderTexture(4000, 2000, 24, RTFormat);
             ViewCamera.targetTexture = rt;
             ViewCamera.Render();
             RenderTexture.active = rt;

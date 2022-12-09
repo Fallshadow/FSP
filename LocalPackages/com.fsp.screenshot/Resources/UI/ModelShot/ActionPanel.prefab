@@ -503,7 +503,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 296b55c165541b745b6659769e7f85aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8e67ce9b08a2d547b9e607433a2bb1c, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -652,7 +652,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9009\u62E9\u52A8\u753B\u6587\u4EF6"
+  m_Text: "\u9009\u62E9\u5355\u4E2A\u52A8\u753B"
 --- !u!1 &4828807695489972325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 296b55c165541b745b6659769e7f85aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8e67ce9b08a2d547b9e607433a2bb1c, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
