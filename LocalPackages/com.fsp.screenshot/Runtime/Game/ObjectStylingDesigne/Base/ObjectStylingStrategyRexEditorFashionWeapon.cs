@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using fsp.utility;
+using Ludiq;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -34,20 +36,20 @@ namespace fsp.ObjectStylingDesigne
                 "饲灵枪",
                 "弓箭",
             };
-            string[] modelNames = Directory.GetFiles(curInfo.ResourceFolderAssetsPath);
-            foreach (var modelName in modelNames)
+            
+            string[] dictNames = Directory.GetDirectories(curInfo.ResourceFolderAssetsPath);
+            foreach (var mobDirectory in dictNames)
             {
-                if (modelName.EndsWith("meta")) continue;
-                ObjectStringPath objectStringPath = getObjectStringPath(modelName);
-                if (modelName.Contains("Weapon_Fashion_1")) ObjectNameList_0_Knife    .Add(objectStringPath);
-                if (modelName.Contains("Weapon_Fashion_2")) ObjectNameList_1_Hammer   .Add(objectStringPath);
-                if (modelName.Contains("Weapon_Fashion_3")) ObjectNameList_2_DualBlade.Add(objectStringPath);
-                if (modelName.Contains("Weapon_Fashion_4")) ObjectNameList_3_KallaGun .Add(objectStringPath);
-                if (modelName.Contains("Weapon_Fashion_5")) ObjectNameList_4_Spear    .Add(objectStringPath);
-                if (modelName.Contains("Weapon_Fashion_6")) ObjectNameList_5_Bow      .Add(objectStringPath);
+                if (mobDirectory.Contains("GreatSword"))  addOSP(mobDirectory, ObjectNameList_0_Knife    );
+                if (mobDirectory.Contains("ForceHammer")) addOSP(mobDirectory, ObjectNameList_1_Hammer   );
+                if (mobDirectory.Contains("FuryBlades"))  addOSP(mobDirectory, ObjectNameList_2_DualBlade);
+                if (mobDirectory.Contains("Kallagun"))    addOSP(mobDirectory, ObjectNameList_3_KallaGun );
+                if (mobDirectory.Contains("KallaGun"))    addOSP(mobDirectory, ObjectNameList_3_KallaGun );
+                if (mobDirectory.Contains("Kallaspear"))  addOSP(mobDirectory, ObjectNameList_4_Spear    );
+                if (mobDirectory.Contains("SwitchBow"))   addOSP(mobDirectory, ObjectNameList_5_Bow      );
             }
         }
-
+        
         public override void ApplySubStrategy(int subStategyIndex)
         {
             curSubStategyIndex = subStategyIndex;
@@ -63,6 +65,25 @@ namespace fsp.ObjectStylingDesigne
             }
         }
 
+        public override void RotateZeroTransY(Vector2 rotate)
+        {
+            if (objectWorldInfos.Count == 0 || Objects.Count == 0) return;
+            
+            switch (curSubStategyIndex)
+            {
+                case 0: 
+                case 1: 
+                case 3:
+                    Objects[0].transform.eulerAngles = Objects[0].transform.eulerAngles.AddY(rotate.x);
+                    break;
+                case 2: 
+                case 4: 
+                case 5: 
+                    osSkeleton.RotateRootY(rotate.x);
+                    break;
+            }
+        }
+        
         public override void ApplySub2Strategy(int sub2StategyIndex)
         {
             
@@ -88,29 +109,64 @@ namespace fsp.ObjectStylingDesigne
                     Objects.Add(Utility.InstantiateObject(prefab0));
                     break;
                 case 2:
-                    filePath = objectFilePath.Replace("_L.prefab", "");
-                    filePath = filePath.Replace("_R.prefab", "");
-                    string pathLeft = $"{filePath}_L.prefab";
-                    string pathRight = $"{filePath}_R.prefab";
-                    prefab0 = AssetDatabase.LoadAssetAtPath<Object>(pathLeft);
-                    prefab1 = AssetDatabase.LoadAssetAtPath<Object>(pathRight);
+                    prefab0 = AssetDatabase.LoadAssetAtPath<Object>(objectFilePath);
+                    prefab1 = AssetDatabase.LoadAssetAtPath<Object>(objectFilePath);
                     if (objectWorldInfos == null || prefab0 == null || prefab1 == null) break;
                     Objects.Add(Utility.InstantiateObject(prefab0));
                     Objects.Add(Utility.InstantiateObject(prefab1));
                     break;
                 case 4:
-                    filePath = objectFilePath.Replace("_Body.prefab", "");
-                    filePath = filePath.Replace("_Head.prefab", "");
-                    string pathBody = $"{filePath}_Body.prefab";
-                    string pathHead = $"{filePath}_Head.prefab";
+                    filePath = objectFilePath.Replace("_Body.FBX", "");
+                    filePath = filePath.Replace("_Head.FBX", "");
+                    string pathBody = $"{filePath}_Body.FBX";
+                    string pathHead = $"{filePath}_Head.FBX";
                     prefab0 = AssetDatabase.LoadAssetAtPath<Object>(pathBody);
                     prefab1 = AssetDatabase.LoadAssetAtPath<Object>(pathHead);
-                    if (objectWorldInfos == null || prefab0 == null || prefab1 == null) break;
+                    if (objectWorldInfos == null || prefab0 == null || prefab1 == null)
+                    {
+                        filePath = objectFilePath.Replace("_Body.fbx", "");
+                        filePath = filePath.Replace("_Head.fbx", "");
+                        pathBody = $"{filePath}_Body.fbx";
+                        pathHead = $"{filePath}_Head.fbx";
+                        prefab0 = AssetDatabase.LoadAssetAtPath<Object>(pathBody);
+                        prefab1 = AssetDatabase.LoadAssetAtPath<Object>(pathHead);
+                        if (objectWorldInfos == null || prefab0 == null || prefab1 == null) break;
+                    }
+                    
                     Objects.Add(Utility.InstantiateObject(prefab0));
+                    GameObject goSpearHead = Utility.InstantiateObject(prefab1);
+                    goSpearHead.AddComponent<Animator>();
+                    goSpearHead.AddComponent<Animation>();
+                    AnimationClip animationClipSpearHead = AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/ResourceRex/Character/Weapon/Spear/Animations/Clips/Run_1.anim");
+                    animationClipSpearHead.SampleAnimation(goSpearHead, animationClipSpearHead.length);
+                    Objects.Add(goSpearHead);
+                    break;
+                case 5:
+                    filePath = objectFilePath.Replace("_Bow.FBX", "");
+                    filePath = filePath.Replace("_Crossbow.FBX", "");
+                    string pathBow = $"{filePath}_Bow.FBX";
+                    string pathQuiver = $"{filePath}_Crossbow.FBX";
+                    prefab0 = AssetDatabase.LoadAssetAtPath<Object>(pathBow);
+                    prefab1 = AssetDatabase.LoadAssetAtPath<Object>(pathQuiver);
+                    if (objectWorldInfos == null || prefab0 == null || prefab1 == null)
+                    {
+                        filePath = objectFilePath.Replace("_Bow.fbx", "");
+                        filePath = filePath.Replace("_Crossbow.fbx", "");
+                        pathBow = $"{filePath}_Bow.fbx";
+                        pathQuiver = $"{filePath}_Crossbow.fbx";
+                        prefab0 = AssetDatabase.LoadAssetAtPath<Object>(pathBow);
+                        prefab1 = AssetDatabase.LoadAssetAtPath<Object>(pathQuiver);
+                        if (objectWorldInfos == null || prefab0 == null || prefab1 == null) break;
+                    }
+
+                    GameObject goBow = Utility.InstantiateObject(prefab0);
+                    goBow.AddComponent<Animator>();
+                    goBow.AddComponent<Animation>();
+                    AnimationClip animationClip = AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/ResourceRex/Character/Weapon/Bow/Animations/Clips/Charge_End_1_B.anim");
+                    animationClip.SampleAnimation(goBow, animationClip.length);
+                    Objects.Add(goBow);
                     Objects.Add(Utility.InstantiateObject(prefab1));
                     break;
-                case 5: 
-                    default: break;
             }
 
             stylingObejcts();

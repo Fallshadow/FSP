@@ -19,117 +19,131 @@ MonoBehaviour:
       Rotation: {x: 0, y: 0, z: 118.0201}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: Rex_Hammer
     CInfos:
     - Position: {x: 0, y: 0, z: 0}
       Rotation: {x: -12.874, y: 0, z: 112.517}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: Rex_DualBlade
     CInfos:
     - Position: {x: -0.298221, y: 0.1015728, z: -0.1635747}
       Rotation: {x: -13.22, y: -20.772, z: 124.987}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 0
     - Position: {x: 0.2156427, y: 0.0330015, z: 0.1900738}
       Rotation: {x: -178.728, y: 17.937, z: -52.64801}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: Rex_KallaGun
     CInfos:
     - Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 6.981, y: -34.92, z: -35.437}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: Rex_Spear
     CInfos:
     - Position: {x: 0.03446472, y: 0.0698216, z: 0.005537689}
       Rotation: {x: 178.629, y: -2.634003, z: -66.375}
       Scale: {x: 0.93424, y: 0.9342401, z: 0.9342399}
       SkeletonLayer: 0
+      IsScaleObj: 0
     - Position: {x: -0.2894085, y: -1.256265, z: 0.4836062}
       Rotation: {x: 66.337, y: -89.503, z: 93.417}
       Scale: {x: 0.9342405, y: 0.9342403, z: 0.9342403}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: Rex_Bow
     CInfos:
     - Position: {x: 0, y: 0, z: 0}
-      Rotation: {x: 0, y: 0, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
+      Rotation: {x: 45, y: 90, z: -90}
+      Scale: {x: 0.7, y: 0.7, z: 0.7}
       SkeletonLayer: 0
-    - Position: {x: 0, y: 0, z: 0}
-      Rotation: {x: 0, y: 0, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
+      IsScaleObj: 0
+    - Position: {x: -0.284, y: -0.302, z: 0.13}
+      Rotation: {x: -44, y: -90, z: -90}
+      Scale: {x: 0.7, y: 0.7, z: 0.7}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: "\u80F8\u7532"
     CInfos:
     - Position: {x: 0, y: -3.64, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 3, y: 3, z: 3}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: "\u81C2\u94E0"
     CInfos:
     - Position: {x: -1.28, y: -3.64, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 3, y: 3, z: 3}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: "\u817F\u7532"
     CInfos:
     - Position: {x: 0, y: -2, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 3, y: 3, z: 3}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: "\u80A9\u7532"
     CInfos:
     - Position: {x: 0, y: -3.64, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 3, y: 3, z: 3}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: "\u5934\u76D4"
     CInfos:
     - Position: {x: 0, y: -5.17, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 3, y: 3, z: 3}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: "\u65F6\u88C5\u6302\u4EF6\u2014\u2014\u60AC\u6D6E"
     CInfos:
     - Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 1
   - WorldInfoName: "\u65F6\u88C5\u6302\u4EF6\u2014\u2014\u5934\u90E8"
     CInfos:
-    - Position: {x: 0, y: -1.58, z: 0}
+    - Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 1
   - WorldInfoName: "\u65F6\u88C5\u6302\u4EF6\u2014\u2014\u80CC\u90E8"
     CInfos:
-    - Position: {x: 0, y: -1.2, z: 0}
-      Rotation: {x: 0, y: 180, z: 0}
+    - Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 1
   - WorldInfoName: "\u65F6\u88C5\u6302\u4EF6\u2014\u2014\u5C3E\u90E8"
     CInfos:
     - Position: {x: 0.31, y: -0.13, z: 0}
       Rotation: {x: 0, y: 90, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
+      IsScaleObj: 0
   - WorldInfoName: "\u9ED8\u8BA4\u65B9\u6848"
     CInfos:
     - Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
-  - WorldInfoName: "\u4EBA\u5F62\u65B9\u6848"
+      IsScaleObj: 0
+  - WorldInfoName: "\u7F29\u653E\u65B9\u6848"
     CInfos:
-    - Position: {x: 0, y: -0.8, z: 0}
+    - Position: {x: 0, y: 0, z: 0}
       Rotation: {x: 0, y: 0, z: 0}
       Scale: {x: 1, y: 1, z: 1}
       SkeletonLayer: 0
-  - WorldInfoName: "\u602A\u7269\u65B9\u6848"
-    CInfos:
-    - Position: {x: 0, y: -1, z: 0}
-      Rotation: {x: 0, y: 0, z: 0}
-      Scale: {x: 1, y: 1, z: 1}
-      SkeletonLayer: 0
+      IsScaleObj: 1

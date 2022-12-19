@@ -29,35 +29,20 @@ namespace fsp.ObjectStylingDesigne
             string[] mobMaleDirectories = Directory.GetDirectories(curInfo.ResourceFolderAssetsPath + "/Male/Fashion");
             foreach (var mobDirectory in mobMaleDirectories)
             {
-                addSuitOSP(mobDirectory, ObjectNameList_0_Male);
+                addOSP(mobDirectory, ObjectNameList_0_Male);
             }
             
             string[] mobFemaleDirectories = Directory.GetDirectories(curInfo.ResourceFolderAssetsPath + "/Female/Fashion");
             foreach (var mobDirectory in mobFemaleDirectories)
             {
-                addSuitOSP(mobDirectory, ObjectNameList_1_FeMale);
+                addOSP(mobDirectory, ObjectNameList_1_FeMale);
             }
         }
-
-        private void addSuitOSP(string mobDirectory, List<ObjectStringPath> listPath)
-        {
-            IEnumerable<string> filePaths = Directory.GetFiles(mobDirectory, "*.*",
-                SearchOption.TopDirectoryOnly).Where(s => s.EndsWith(".FBX"));
-
-            foreach (var item in filePaths)
-            {
-                string filePath = item.Replace('\\', '/');
-                if (!File.Exists(filePath)) continue;
-                ObjectStringPath objectStringPath = getObjectStringPath(filePath);
-                listPath.Add(objectStringPath);
-            }
-        }
-        
 
         public override void ApplySubStrategy(int subStategyIndex)
         {
             curSubStategyIndex = subStategyIndex;
-            objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("人形方案");
+            objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("缩放方案");
         }
 
         public override void ApplySub2Strategy(int sub2StategyIndex)

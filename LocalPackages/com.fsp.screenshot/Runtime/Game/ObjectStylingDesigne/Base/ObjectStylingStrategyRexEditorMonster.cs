@@ -43,9 +43,14 @@ namespace fsp.ObjectStylingDesigne
         private void addMonster(string mobDirectory, int length, List<ObjectStringPath> listPath)
         {
             string subFileSuffix = mobDirectory.Substring(mobDirectory.Length - length);
-            string filePath = mobDirectory + $"/Prefabs/Model_{subFileSuffix}.prefab";
+            string filePath = mobDirectory + $"/Prefabs/MixMonster_{subFileSuffix}.prefab";
             filePath = filePath.Replace('\\', '/');
-            if (!File.Exists(filePath)) return;
+            if (!File.Exists(filePath))
+            {
+                filePath = mobDirectory + $"/Prefabs/Model_{subFileSuffix}.prefab";
+                filePath = filePath.Replace('\\', '/');
+                if (!File.Exists(filePath)) return;
+            }
             ObjectStringPath objectStringPath = getObjectStringPath(filePath);
             listPath.Add(objectStringPath);
         }
@@ -63,7 +68,7 @@ namespace fsp.ObjectStylingDesigne
         public override void ApplySubStrategy(int subStategyIndex)
         {
             curSubStategyIndex = subStategyIndex;
-            objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("怪物方案");
+            objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("缩放方案");
         }
 
         public override void ApplySub2Strategy(int sub2StategyIndex)

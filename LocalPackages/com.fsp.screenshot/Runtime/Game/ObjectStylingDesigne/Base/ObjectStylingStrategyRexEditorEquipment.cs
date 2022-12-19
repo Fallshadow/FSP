@@ -59,15 +59,15 @@ namespace fsp.ObjectStylingDesigne
         public override void ApplySub2Strategy(int sub2StategyIndex)
         {
             curSub2StategyIndex = sub2StategyIndex;
-            
-            switch (curSub2StategyIndex)
-            {
-                case 0: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("头盔"); break;
-                case 1: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("胸甲"); break;
-                case 2: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("肩甲"); break;
-                case 3: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("臂铠"); break;
-                case 4: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("腿甲"); break;
-            }
+            objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("缩放方案");
+            // switch (curSub2StategyIndex)
+            // {
+            //     case 0: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("头盔"); break;
+            //     case 1: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("胸甲"); break;
+            //     case 2: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("肩甲"); break;
+            //     case 3: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("臂铠"); break;
+            //     case 4: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("腿甲"); break;
+            // }
         }
 
         // 通过文件名称构建ObjectStringPath

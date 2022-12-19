@@ -85,6 +85,7 @@ namespace fsp.modelshot.ui
                 case 1: FashionPendantGroupDatasItems.UpdateItems(_rexEditorFashionPendant.ObjectNameList_1_Head);break;
                 case 2: FashionPendantGroupDatasItems.UpdateItems(_rexEditorFashionPendant.ObjectNameList_2_Back);break;
                 case 3: FashionPendantGroupDatasItems.UpdateItems(_rexEditorFashionPendant.ObjectNameList_3_Tail);break;
+                case 4: FashionPendantGroupDatasItems.UpdateItems(_rexEditorFashionPendant.ObjectNameList_4_Effect);break;
             }
 
             FashionPendantGroupDatasRoot.SetSiblingIndex(index + 2);
@@ -104,6 +105,7 @@ namespace fsp.modelshot.ui
             if (data.FilterName.Contains("head")) _rexEditorFashionPendant.ApplySubStrategy(1);
             if (data.FilterName.Contains("back")) _rexEditorFashionPendant.ApplySubStrategy(2);
             if (data.FilterName.Contains("tail")) _rexEditorFashionPendant.ApplySubStrategy(3);
+            if (data.FilterName.Contains("effect") || data.FilterName.Contains("Effect")) _rexEditorFashionPendant.ApplySubStrategy(4);
             _rexEditorFashionPendant.LoadObject(data.FilePath);
             
             for (int numIndex = 0; numIndex < FashionPendantGroupDatasItems.Count; numIndex++)

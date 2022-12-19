@@ -10,5 +10,6 @@ namespace fsp.ObjectStylingDesigne
         public Vector3 Rotation;
         public Vector3 Scale;
         public int SkeletonLayer;
+        public bool IsScaleObj = false;
     }
 }

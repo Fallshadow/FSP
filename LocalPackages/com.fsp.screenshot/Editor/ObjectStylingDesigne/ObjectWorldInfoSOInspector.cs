@@ -49,6 +49,7 @@ namespace fsp.ObjectStylingDesigne
                                         oSWorldTransInfo.Rotation = EditorGUILayout.Vector3Field("相对Rot", oSWorldTransInfo.Rotation);
                                         oSWorldTransInfo.Scale = EditorGUILayout.Vector3Field("相对Scale", oSWorldTransInfo.Scale);
                                         oSWorldTransInfo.SkeletonLayer = EditorGUILayout.IntField("层级", oSWorldTransInfo.SkeletonLayer);
+                                        oSWorldTransInfo.IsScaleObj = EditorGUILayout.Toggle("是否要相对缩放", oSWorldTransInfo.IsScaleObj);
                                     }
                                 }
                             }, 1);

@@ -15,7 +15,7 @@ MonoBehaviour:
   ObjectPathStructs:
   - IdType: 1
     CreatePlanName: "Rex\u6B66\u5668\u5E93\u6A21\u578B"
-    ResourceFolderAssetsPath: Assets/ResourceRex/equipment/Weapon
+    ResourceFolderAssetsPath: Assets/ResourceRex/Equipment/Weapon
     FileSuffixStrings:
     - .prefab
     Postion: {x: 0, y: 0, z: 0}
@@ -35,13 +35,13 @@ MonoBehaviour:
     MaxLayer: 1
   - IdType: 4
     CreatePlanName: "RexDebug\u4E0B\u9879\u76EE\u65F6\u88C5\u6302\u4EF6\u5E93\u7B56\u7565"
-    ResourceFolderAssetsPath: Assets\ResourceRex\Character\Fashion\Pendant
+    ResourceFolderAssetsPath: Assets\ResourceRex\Character\Fashion
     FileSuffixStrings: []
     Postion: {x: 0, y: 0, z: 0}
     MaxLayer: 1
   - IdType: 5
     CreatePlanName: "RexDebug\u4E0B\u9879\u76EE\u65F6\u88C5\u6B66\u5668\u5E93\u7B56\u7565"
-    ResourceFolderAssetsPath: Assets/ResourceRex/equipment/Weapon
+    ResourceFolderAssetsPath: Assets\ResourceRex\Character\Fashion\Weapon
     FileSuffixStrings: []
     Postion: {x: 0, y: 0, z: 0}
     MaxLayer: 1

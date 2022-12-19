@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using UnityEngine;
 
 namespace fsp.utility
 {
@@ -21,6 +22,22 @@ namespace fsp.utility
             }
 
             return FolderPath;
+        }
+
+        public static Bounds GetGoRendererBounds(GameObject go)
+        {
+            Renderer[] mrs = go.GetComponentsInChildren<Renderer>();
+            Vector3 center = go.transform.position;
+            Bounds bounds = new Bounds(center, Vector3.zero);
+            if (mrs.Length != 0)
+            {
+                foreach (Renderer mr in mrs)
+                {
+                    bounds.Encapsulate(mr.bounds);
+                }
+            }
+
+            return bounds;
         }
     }
 }

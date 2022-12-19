@@ -71,12 +71,12 @@ namespace fsp.ObjectStylingDesigne
             {
                 case 0: 
                 case 1: 
-                case 3: 
-                case 5: 
+                case 3:
                     Objects[0].transform.eulerAngles = Objects[0].transform.eulerAngles.AddY(rotate.x);
                     break;
                 case 2: 
                 case 4: 
+                case 5: 
                     osSkeleton.RotateRootY(rotate.x);
                     break;
             }
@@ -126,10 +126,24 @@ namespace fsp.ObjectStylingDesigne
                     prefab1 = AssetDatabase.LoadAssetAtPath<Object>(pathHead);
                     if (objectWorldInfos == null || prefab0 == null || prefab1 == null) break;
                     Objects.Add(Utility.InstantiateObject(prefab0));
-                    Objects.Add(Utility.InstantiateObject(prefab1));
+                    GameObject goSpearHead = Utility.InstantiateObject(prefab1);
+                    Animator animator = goSpearHead.GetComponentInChildren<Animator>();
+                    animator.runtimeAnimatorController = null;
+                    Objects.Add(goSpearHead);
+                    AnimationClip animationClipSpearHead = AssetDatabase.LoadAssetAtPath<AnimationClip>("Assets/ResourceRex/Character/Weapon/Spear/Animations/Clips/Run_1.anim");
+                    animationClipSpearHead.SampleAnimation(animator.gameObject, animationClipSpearHead.length);
                     break;
                 case 5: 
-                    default: break;
+                    filePath = objectFilePath.Replace("_Bow.prefab", "");
+                    filePath = filePath.Replace("_Quiver.prefab", "");
+                    string pathBow = $"{filePath}_Bow.prefab";
+                    string pathQuiver = $"{filePath}_Quiver.prefab";
+                    prefab0 = AssetDatabase.LoadAssetAtPath<Object>(pathBow);
+                    prefab1 = AssetDatabase.LoadAssetAtPath<Object>(pathQuiver);
+                    if (objectWorldInfos == null || prefab0 == null || prefab1 == null) break;
+                    Objects.Add(Utility.InstantiateObject(prefab0));
+                    Objects.Add(Utility.InstantiateObject(prefab1));
+                    break;
             }
 
             stylingObejcts();

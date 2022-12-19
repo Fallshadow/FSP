@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace fsp.ObjectStylingDesigne
 {
@@ -9,6 +10,7 @@ namespace fsp.ObjectStylingDesigne
         public List<ObjectStringPath> ObjectNameList_1_Head    = new List<ObjectStringPath>();
         public List<ObjectStringPath> ObjectNameList_2_Back    = new List<ObjectStringPath>();
         public List<ObjectStringPath> ObjectNameList_3_Tail    = new List<ObjectStringPath>();
+        public List<ObjectStringPath> ObjectNameList_4_Effect  = new List<ObjectStringPath>();
 
         public ObjectStylingStrategyRexEditorPendant(ObjectStylingStrategyInfo info) : base(info)
         {
@@ -24,30 +26,60 @@ namespace fsp.ObjectStylingDesigne
                 "头部",
                 "背部",
                 "尾巴",
+                "特效",
             };
 
-            string[] modelNames = Directory.GetFiles(curInfo.ResourceFolderAssetsPath);
-            foreach (var modelName in modelNames)
+            string[] dictNames = Directory.GetDirectories(curInfo.ResourceFolderAssetsPath);
+            foreach (var mobDirectory in dictNames)
             {
-                if (modelName.EndsWith("meta")) continue;
-                ObjectStringPath objectStringPath = getObjectStringPath(modelName);
-                if (modelName.Contains("hang")) ObjectNameList_0_Hang.Add(objectStringPath);
-                if (modelName.Contains("head")) ObjectNameList_1_Head.Add(objectStringPath);
-                if (modelName.Contains("back")) ObjectNameList_2_Back.Add(objectStringPath);
-                if (modelName.Contains("tail")) ObjectNameList_3_Tail.Add(objectStringPath);
+                if (mobDirectory.Contains("hang")) addOSP(mobDirectory, ObjectNameList_0_Hang);
+                if (mobDirectory.Contains("head")) addOSP(mobDirectory, ObjectNameList_1_Head);
+                if (mobDirectory.Contains("back")) addOSP(mobDirectory, ObjectNameList_2_Back);
+                if (mobDirectory.Contains("tail")) addOSP(mobDirectory, ObjectNameList_3_Tail);
+                if (mobDirectory.Contains("Pendant"))
+                {
+                    string[] files = Directory.GetFiles(mobDirectory);
+                    foreach (var file in files)
+                    {
+                        if (file.Contains(".meta")) continue;
+                        if (file.Contains("effect") || file.Contains("Effect"))
+                        {
+                            string filePath = file.Replace('\\', '/');
+                            if (!File.Exists(filePath)) continue;
+                            ObjectStringPath objectStringPath = getObjectStringPath(filePath);
+                            ObjectNameList_4_Effect.Add(objectStringPath);
+                        }
+                    }
+                }
+            }
+            string[] ModelEffectFiles = Directory.GetFiles("Assets/ResourceRex/Prefab/Effect/Character/Fashion");
+            foreach (var file in ModelEffectFiles)
+            {
+                if (file.Contains(".meta")) continue;
+                if (file.Contains("effect") || file.Contains("Effect"))
+                {
+                    string filePath = file.Replace('\\', '/');
+                    if (!File.Exists(filePath)) continue;
+                    ObjectStringPath objectStringPath = getObjectStringPath(filePath);
+                    ObjectNameList_4_Effect.Add(objectStringPath);
+                }
             }
         }
-
+        
         public override void ApplySubStrategy(int subStategyIndex)
         {
             curSubStategyIndex = subStategyIndex;
             
             switch (curSubStategyIndex)
             {
-                case 0: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("时装挂件——悬浮"); break;
-                case 1: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("时装挂件——头部"); break;
-                case 2: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("时装挂件——背部"); break;
-                case 3: objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("时装挂件——尾部"); break;
+                case 0:
+                case 2: 
+                case 3: 
+                    objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("缩放方案"); break;
+                case 1: 
+                    objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("时装挂件——头部"); break;
+                case 4:
+                    objectWorldInfos = ObjectWorldInfoSO.Instance.GetObjectStylingWorldTransInfos("默认方案"); break;
             }
         }
 

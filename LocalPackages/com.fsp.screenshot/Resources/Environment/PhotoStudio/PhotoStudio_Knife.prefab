@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WarmLight
       objectReference: {fileID: 0}
+    - target: {fileID: 2335783657191005250, guid: 7cbb23d3dd9c8d247a01aca12f434992,
+        type: 3}
+      propertyPath: m_Range
+      value: 6.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2335783657191005250, guid: 7cbb23d3dd9c8d247a01aca12f434992,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 5981319656426464652, guid: 7cbb23d3dd9c8d247a01aca12f434992,
         type: 3}
       propertyPath: m_RootOrder
@@ -70,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 5981319656426464653, guid: 7cbb23d3dd9c8d247a01aca12f434992,
         type: 3}
       propertyPath: m_Name
-      value: Knife_PhotoStudio
+      value: PhotoStudio_Knife
       objectReference: {fileID: 0}
     - target: {fileID: 9151697240852112222, guid: 7cbb23d3dd9c8d247a01aca12f434992,
         type: 3}
